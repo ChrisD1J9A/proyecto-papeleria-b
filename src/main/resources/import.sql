@@ -1,0 +1,18 @@
+INSERT INTO unidad (descripcion, estatus) VALUES ('Caja', 1);
+INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 1', 1);
+INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 2', 1);
+INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 3', 1);
+INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 4', 0);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('Broche', 15.90, 15.99, 16.0,1, 'Producto de prueba', 1);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('Broche 2', 29.90, 17.99, 18.0,0, 'Producto 2', 2);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('Broche 3', 29.90, 17.99, 18.0,0, 'Producto 2', 3);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('Broche 4', 29.90, 17.99, 18.0,0, 'Producto 2', 4);
+INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Office Deapot', 'Plaza del valle', '9512598298', 'OFLAMSN', 1);
+INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Proveedora escolar', 'Centro Oaxaca de Juarez', '9512398498', 'PERASHF123', 1);
+INSERT INTO solicitudes (id_usuario_aprob, id_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus) VALUES (1, 1, 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Todo es agridulce xD', 'Tengo miedo de lo que pueda pasar :c', 'Aceptada');
+INSERT INTO solicitudes (id_usuario_aprob, id_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus) VALUES (1, 1, 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Todo es agridulce xD', 'No paso nada pero ahora es un poco extraño', 'Rechazada');
+INSERT INTO solicitudes (id_usuario_aprob, id_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus) VALUES (1, 1, 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Todo es agridulce xD', 'ojala volver en el tiempo xD', 'Pendiente');
+INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 1, 1);
+INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 1, 2);
+INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 1, 3);
+INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 1, 4);
