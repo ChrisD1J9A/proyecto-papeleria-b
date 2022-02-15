@@ -10,8 +10,7 @@ import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="detalle_solicitud")
@@ -19,14 +18,14 @@ public class detalle_solicitud implements Serializable {
 	@EmbeddedId
 	private SolicitudDetallePK solicitudDetallePK;
 
-	@ManyToOne(optional = false, fetch = FetchType.LAZY/* , cascade = CascadeType.ALL */)
+	@ManyToOne(optional = false, fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_solicitud", referencedColumnName = "id_solicitud", insertable = false, updatable = false)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Solicitud solicitud;
 
-	@ManyToOne(optional = false ,  fetch = FetchType.LAZY)
+	@ManyToOne(optional = false ,  fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_producto", referencedColumnName = "id_producto", insertable = false, updatable = false)
-	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+	//@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Producto producto;
 
 	@Column

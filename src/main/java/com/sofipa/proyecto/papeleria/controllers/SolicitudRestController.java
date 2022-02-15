@@ -11,41 +11,66 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.entity.Solicitud;
+import com.sofipa.proyecto.papeleria.models.entity.detalle_solicitud;
+import com.sofipa.proyecto.papeleria.models.services.IDetalleSolicitudService;
 import com.sofipa.proyecto.papeleria.models.services.ISolicitudService;
+import org.springframework.dao.DataAccessException;
+import java.util.HashMap;
+import java.util.Map;
+import org.springframework.http.ResponseEntity;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
 @RequestMapping("/api")
 public class SolicitudRestController {
 	@Autowired
 	private ISolicitudService solicitudService;
-	
+	@Autowired
+	private IDetalleSolicitudService detalleSolicitudService;
+
 	@GetMapping("/solicitudes")
-	public List<Solicitud> index()
-	{
+	public List<Solicitud> index() {
 		return solicitudService.findAll();
 	}
-	
+
 	@GetMapping("/solicitudes/{id}")
-	public Solicitud show(@PathVariable Long id)
-	{
+	public Solicitud show(@PathVariable Long id) {
 		return solicitudService.findById(id);
 	}
-	
+
 	@PostMapping("/solicitudes")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Solicitud create (@RequestBody Solicitud solicitud)
-	{
+	public Solicitud create(@RequestBody Solicitud solicitud) {
 		return solicitudService.save(solicitud);
 	}
-	
+
+	@PostMapping("/solicitudesDet")
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<?> createS(@RequestBody Solicitud solicitud, @RequestParam("detalles") detalle_solicitud detalles[]) {
+		Solicitud solicitudNew = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			solicitudNew = this.solicitudService.save(solicitud);
+			response.put("solicitud", solicitudNew);
+			for (detalle_solicitud ds : detalles) {
+				ds.setSolicitud(solicitud);
+				detalleSolicitudService.save(ds);
+			}
+		} catch (DataAccessException e) {
+			response.put("mensaje", "error al registrar la solicitud" + e);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+
+		}
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+	}
+
 	@PutMapping("/solicitudes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Solicitud update(@RequestBody Solicitud solicitud, @PathVariable Long id)
-	{
+	public Solicitud update(@RequestBody Solicitud solicitud, @PathVariable Long id) {
 		Solicitud solicitudActual = solicitudService.findById(id);
 		solicitudActual.setId_usuario_aprob(solicitud.getId_usuario_aprob());
 		solicitudActual.setId_sucursal(solicitud.getId_sucursal());
@@ -58,9 +83,8 @@ public class SolicitudRestController {
 		solicitudActual.setObservacion_solicitud(solicitud.getObservacion_solicitud());
 		solicitudActual.setObservacion_aprobacion_rechazo(solicitud.getObservacion_aprobacion_rechazo());
 		solicitudActual.setEstatus(solicitud.getEstatus());
-		
+
 		return solicitudService.save(solicitudActual);
 	}
-	
 
 }
