@@ -19,7 +19,7 @@ import com.sofipa.proyecto.papeleria.models.services.IDetalleSolicitudService;
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/api")
-public class DetalleRestController {
+public class DetalleSolicitudRestController {
 	@Autowired
 	
 	private IDetalleSolicitudService detalleSolicitudService;
