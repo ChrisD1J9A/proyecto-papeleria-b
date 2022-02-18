@@ -33,6 +33,11 @@ INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada,
 INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 3, 3);
 INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 3, 4);
 
-INSERT INTO compras (usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor) VALUES (1, '2022-02-16', 5000, 'C:', 'La compra se efectuo cuidadosamente', 1, 1);
+INSERT INTO compras (usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (1, '2022-02-16', 5000, 'C:', 'La compra se efectuo cuidadosamente', 1, 1, 'En proceso');
+INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 16.0, 16.0, 1 , 1);
+INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 2);
+INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 3);
+INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 4);
+
 
 

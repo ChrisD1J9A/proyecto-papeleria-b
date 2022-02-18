@@ -34,7 +34,7 @@ public class Compra implements Serializable{
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Proveedor proveedor;
 	
-	@Column
+	@Column(name="usuario")
 	private long usuario;
 	
 	@Column(name="fecha_creacion")
@@ -51,6 +51,9 @@ public class Compra implements Serializable{
 	
 	@Column(name="observaciones")
 	private String observaciones;
+	
+	@Column(name="estatus")
+	private String estatus;
 	
 	public Long getId_compra() {
 		return id_compra;
@@ -114,6 +117,14 @@ public class Compra implements Serializable{
 
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
+	}
+
+	public String getEstatus() {
+		return estatus;
+	}
+
+	public void setEstatus(String estatus) {
+		this.estatus = estatus;
 	}
 
 

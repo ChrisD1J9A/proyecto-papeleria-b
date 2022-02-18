@@ -28,11 +28,17 @@ public class detalle_compra implements Serializable {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Producto producto;
 
-	@Column
+	@Column(name="cant_existente")
 	private int cant_existente;
+	@Column(name="cant_solicitada")
+	private int cant_solicitada;
+	@Column(name="cant_autorizada")
 	private int cant_autorizada;
+	@Column(name="cant_comprada")
 	private int cant_comprada;
+	@Column(name="precio_unitario")
 	private float precio_unitario;
+	@Column(name="precio_total")
 	private float precio_total;
 
 	public CompraDetallePK getCompraDetallePK() {
@@ -65,6 +71,14 @@ public class detalle_compra implements Serializable {
 
 	public void setCant_existente(int cant_existente) {
 		this.cant_existente = cant_existente;
+	}
+
+	public int getCant_solicitada() {
+		return cant_solicitada;
+	}
+
+	public void setCant_solicitada(int cant_solicitada) {
+		this.cant_solicitada = cant_solicitada;
 	}
 
 	public int getCant_autorizada() {
