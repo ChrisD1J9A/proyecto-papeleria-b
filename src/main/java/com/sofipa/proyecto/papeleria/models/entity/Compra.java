@@ -2,6 +2,8 @@ package com.sofipa.proyecto.papeleria.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,8 +31,8 @@ public class Compra implements Serializable{
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Solicitud solicitud;
 	
-	@ManyToOne(optional= false, fetch= FetchType.LAZY/*, cascade = CascadeType.ALL*/)
-    @JoinColumn(name = "id_proveedor", referencedColumnName = "id_proveedor")
+	@ManyToOne(optional= true, fetch= FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_proveedor", referencedColumnName = "id_proveedor", nullable = true)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Proveedor proveedor;
 	
@@ -41,10 +43,8 @@ public class Compra implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date fecha_creacion;
 	
-	
 	@Column(name="gasto_total")
 	private float gasto_total;
-	
 	
 	@Column(name="ticket")
 	private String ticket;
