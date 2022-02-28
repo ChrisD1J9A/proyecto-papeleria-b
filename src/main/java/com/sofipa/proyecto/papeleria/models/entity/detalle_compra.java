@@ -36,8 +36,6 @@ public class detalle_compra implements Serializable {
 	private int cant_autorizada;
 	@Column(name="cant_comprada")
 	private int cant_comprada;
-	@Column(name="cant_final")
-	private int cant_final;
 	@Column(name="precio_unitario")
 	private float precio_unitario;
 	@Column(name="precio_total")
@@ -97,16 +95,6 @@ public class detalle_compra implements Serializable {
 
 	public void setCant_comprada(int cant_comprada) {
 		this.cant_comprada = cant_comprada;
-	}
-	
-	
-
-	public int getCant_final() {
-		return cant_final;
-	}
-
-	public void setCant_final(int cant_final) {
-		this.cant_final = cant_final;
 	}
 
 	public float getPrecio_unitario() {
