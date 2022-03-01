@@ -41,3 +41,8 @@ INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, ca
 INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 3);
 INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 4);
 
+INSERT INTO inventario (id_sucursal, fecha_ultima_actualizacion) VALUES (1, '2022-03-01');
+INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 1);
+INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 2);
+INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 3);
+INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 4);

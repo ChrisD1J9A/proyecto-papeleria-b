@@ -21,7 +21,6 @@ import com.sofipa.proyecto.papeleria.models.services.IDetalleSolicitudService;
 @RequestMapping("/api")
 public class DetalleSolicitudRestController {
 	@Autowired
-	
 	private IDetalleSolicitudService detalleSolicitudService;
 	
 	@PostMapping("/detalle_solicitud")

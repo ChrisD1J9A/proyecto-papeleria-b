@@ -22,10 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import com.sofipa.proyecto.papeleria.models.entity.Compra;
-import com.sofipa.proyecto.papeleria.models.entity.Proveedor;
 import com.sofipa.proyecto.papeleria.models.services.ICompraService;
-import com.sofipa.proyecto.papeleria.models.services.IProveedorService;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
