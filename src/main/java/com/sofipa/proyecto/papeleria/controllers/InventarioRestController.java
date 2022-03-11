@@ -49,7 +49,7 @@ public class InventarioRestController {
 	public Inventario update (@RequestBody Inventario inventario, @PathVariable Long id)
 	{
 		Inventario inventarioActual = inventarioService.findById(id);
-		inventarioActual.setFecha__ultima_actualizacion(inventario.getFecha__ultima_actualizacion());
+		inventarioActual.setFecha_ultima_actualizacion(inventario.getFecha_ultima_actualizacion());
 		inventarioActual.setId_sucursal(inventario.getId_inventario());
 		
 		return inventarioService.save(inventarioActual);

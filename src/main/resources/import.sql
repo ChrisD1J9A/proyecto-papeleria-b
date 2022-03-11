@@ -46,3 +46,4 @@ INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizac
 INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 2);
 INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 3);
 INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (22, 'Disponible', '2022-03-01', 1, 4);
+INSERT INTO detalle_inventario (cant_existente, estatus, fecha_ultima_actualizacion, id_inventario, id_producto) VALUES (3, 'Disponible', '2022-03-01', 1, 5);

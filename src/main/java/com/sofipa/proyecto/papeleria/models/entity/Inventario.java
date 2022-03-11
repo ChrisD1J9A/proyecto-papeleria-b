@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "inventario")
@@ -21,7 +23,8 @@ public class Inventario implements Serializable {
 	private Long id_sucursal;
 
 	@Column(name = "fecha_ultima_actualizacion")
-	private Date fecha__ultima_actualizacion;
+	@Temporal(TemporalType.DATE)
+	private Date fecha_ultima_actualizacion;
 
 	public Long getId_inventario() {
 		return id_inventario;
@@ -39,12 +42,12 @@ public class Inventario implements Serializable {
 		this.id_sucursal = id_sucursal;
 	}
 
-	public Date getFecha__ultima_actualizacion() {
-		return fecha__ultima_actualizacion;
+	public Date getFecha_ultima_actualizacion() {
+		return fecha_ultima_actualizacion;
 	}
 
-	public void setFecha__ultima_actualizacion(Date fecha__ultima_actualizacion) {
-		this.fecha__ultima_actualizacion = fecha__ultima_actualizacion;
+	public void setFecha_ultima_actualizacion(Date fecha_ultima_actualizacion) {
+		this.fecha_ultima_actualizacion = fecha_ultima_actualizacion;
 	}
 
 	private static final long serialVersionUID = 1L;
