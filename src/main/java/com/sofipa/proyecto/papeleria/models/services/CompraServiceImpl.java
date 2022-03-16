@@ -1,11 +1,9 @@
 package com.sofipa.proyecto.papeleria.models.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.sofipa.proyecto.papeleria.models.dao.ICompraDao;
 import com.sofipa.proyecto.papeleria.models.entity.Compra;
 
