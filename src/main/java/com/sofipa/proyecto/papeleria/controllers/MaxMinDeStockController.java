@@ -46,7 +46,7 @@ public class MaxMinDeStockController {
 	public MaxMinDeStock update(@RequestBody MaxMinDeStock maxMinDeStock, @PathVariable Long id)
 	{ 
 		MaxMinDeStock maxMinStockActual = maxMinStockService.findById(id);
-		maxMinStockActual.setId_sucursal(maxMinDeStock.getId_sucursal());
+		maxMinStockActual.setSucursal(maxMinDeStock.getSucursal());
 		maxMinStockActual.setMax_stock(maxMinDeStock.getMax_stock());
 		maxMinStockActual.setMin_stock(maxMinDeStock.getMin_stock());
 		maxMinStockActual.setUsuario_modifico(maxMinDeStock.getUsuario_modifico());

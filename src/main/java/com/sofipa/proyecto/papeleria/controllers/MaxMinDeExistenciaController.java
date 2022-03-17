@@ -48,7 +48,7 @@ public class MaxMinDeExistenciaController
 	public MaxMinDeExistencia update(@RequestBody MaxMinDeExistencia maxMinDeExistencia, @PathVariable Long id)
 	{ 
 		MaxMinDeExistencia maxMinExistenciaActual = maxMinExistenciaService.findById(id);
-		maxMinExistenciaActual.setId_sucursal(maxMinDeExistencia.getId_sucursal());
+		maxMinExistenciaActual.setSucursal(maxMinDeExistencia.getSucursal());
 		maxMinExistenciaActual.setMax_existencia(maxMinDeExistencia.getMax_existencia());
 		maxMinExistenciaActual.setMin_existencia(maxMinDeExistencia.getMin_existencia());
 		maxMinExistenciaActual.setUsuario_modifico(maxMinDeExistencia.getUsuario_modifico());

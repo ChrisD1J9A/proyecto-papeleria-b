@@ -19,7 +19,7 @@ public class MaxMinDeStock implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_maxMinDeStock;
 	
-	private Long id_sucursal;
+	private String sucursal;
 	private String usuario_modifico;
 	private int max_stock;
 	private int min_stock;
@@ -41,12 +41,12 @@ public class MaxMinDeStock implements Serializable
 		this.id_maxMinDeStock = id_maxMinDeStock;
 	}
 
-	public Long getId_sucursal() {
-		return id_sucursal;
+	public String getSucursal() {
+		return sucursal;
 	}
 
-	public void setId_sucursal(Long id_sucursal) {
-		this.id_sucursal = id_sucursal;
+	public void setSucursal(String sucursal) {
+		this.sucursal = sucursal;
 	}
 
 	public String getUsuario_modifico() {

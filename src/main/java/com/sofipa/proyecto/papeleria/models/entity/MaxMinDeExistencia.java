@@ -18,7 +18,7 @@ public class MaxMinDeExistencia implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_maxMinDeExistencia;
 
-	private Long id_sucursal;
+	private String sucursal;
 	private String usuario_modifico;
 	private int max_existencia;
 	private int min_existencia;
@@ -40,12 +40,12 @@ public class MaxMinDeExistencia implements Serializable {
 		this.id_maxMinDeExistencia = id_maxMinDeExistencia;
 	}
 
-	public Long getId_sucursal() {
-		return id_sucursal;
+	public String getSucursal() {
+		return sucursal;
 	}
 
-	public void setId_sucursal(Long id_sucursal) {
-		this.id_sucursal = id_sucursal;
+	public void setSucursal(String sucursal) {
+		this.sucursal = sucursal;
 	}
 
 	public String getUsuario_modifico() {
