@@ -28,4 +28,9 @@ public class CompraServiceImpl implements ICompraService{
 	public Compra findById(Long id) {
 		return compraDao.findById(id).orElse(null);
 	}
+
+	@Override
+	public Compra findBySucursal(Long id) {
+		return compraDao.findBySucursal(id);
+	}
 }

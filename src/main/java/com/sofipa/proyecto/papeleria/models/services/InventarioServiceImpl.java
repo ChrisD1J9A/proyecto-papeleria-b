@@ -28,4 +28,9 @@ public class InventarioServiceImpl implements IInventarioService{
 		return inventarioDao.findById(id).orElse(null);
 	}
 
+	@Override
+	public Inventario findBySucursal(Long id) {
+		return inventarioDao.findBySucursal(id);
+	}
+
 }

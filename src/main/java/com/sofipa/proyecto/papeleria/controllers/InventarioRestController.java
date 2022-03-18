@@ -36,6 +36,12 @@ public class InventarioRestController {
 		return inventarioService.findById(id);
 	}
 	
+	@GetMapping("/inventario/Sucursal/{id}")
+	public Inventario showIS (@PathVariable Long id) 
+	{
+		return inventarioService.findBySucursal(id);
+	}
+	
 	@PostMapping("/inventario")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Inventario create (@RequestBody Inventario inventario)

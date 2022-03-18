@@ -10,5 +10,7 @@ public interface ICompraService {
 	public Compra save (Compra compra);
 	
 	public Compra findById(Long id);
+	
+	public Compra findBySucursal(Long id);
 
 }

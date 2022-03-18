@@ -36,8 +36,11 @@ public class Compra implements Serializable{
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Proveedor proveedor;
 	
+	@Column(name="id_sucursal")
+	private Long id_sucursal;
+	
 	@Column(name="usuario")
-	private long usuario;
+	private String usuario;
 	
 	@Column(name="fecha_creacion")
 	@Temporal(TemporalType.DATE)
@@ -79,11 +82,19 @@ public class Compra implements Serializable{
 		this.proveedor = proveedor;
 	}
 
-	public long getUsuario() {
+	public Long getId_sucursal() {
+		return id_sucursal;
+	}
+
+	public void setId_sucursal(Long id_sucursal) {
+		this.id_sucursal = id_sucursal;
+	}
+
+	public String getUsuario() {
 		return usuario;
 	}
 
-	public void setUsuario(long usuario) {
+	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
 

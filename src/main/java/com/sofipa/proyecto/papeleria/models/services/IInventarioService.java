@@ -11,5 +11,6 @@ public interface IInventarioService {
 	public Inventario save (Inventario inventario);
 	
 	public Inventario findById(Long id);
-
+	
+	public Inventario findBySucursal(Long id);
 }
