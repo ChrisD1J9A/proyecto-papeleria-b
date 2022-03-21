@@ -30,7 +30,7 @@ public class CompraServiceImpl implements ICompraService{
 	}
 
 	@Override
-	public Compra findBySucursal(Long id) {
+	public List <Compra> findBySucursal(Long id) {
 		return compraDao.findBySucursal(id);
 	}
 }

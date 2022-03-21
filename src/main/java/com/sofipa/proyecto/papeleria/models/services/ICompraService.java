@@ -11,6 +11,6 @@ public interface ICompraService {
 	
 	public Compra findById(Long id);
 	
-	public Compra findBySucursal(Long id);
+	public List <Compra> findBySucursal(Long id);
 
 }
