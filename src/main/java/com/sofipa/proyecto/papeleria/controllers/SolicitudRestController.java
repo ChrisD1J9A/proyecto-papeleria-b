@@ -36,6 +36,12 @@ public class SolicitudRestController {
 	public List<Solicitud> index() {
 		return solicitudService.findAll();
 	}
+	
+	@GetMapping("/solicitudes/sucursal/{id}")
+	public List <Solicitud> showSS(@PathVariable Long id)
+	{
+		return solicitudService.findBySucursal(id);
+	}
 
 	@GetMapping("/solicitudes/{id}")
 	public Solicitud show(@PathVariable Long id) {
@@ -74,6 +80,7 @@ public class SolicitudRestController {
 		Solicitud solicitudActual = solicitudService.findById(id);
 		solicitudActual.setId_usuario_aprob(solicitud.getId_usuario_aprob());
 		solicitudActual.setId_sucursal(solicitud.getId_sucursal());
+		solicitudActual.setSucursal(solicitud.getSucursal());
 		solicitudActual.setNombre_usuario(solicitud.getNombre_usuario());
 		solicitudActual.setFecha_solicitud(solicitud.getFecha_solicitud());
 		solicitudActual.setFecha_rechazo(solicitud.getFecha_rechazo());

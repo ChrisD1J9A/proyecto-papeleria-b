@@ -21,7 +21,8 @@ public class Solicitud implements Serializable{
 	@Column
 	private Long id_usuario_aprob;
 	private Long id_sucursal;
-	private String nombre_usuario;
+	private String sucursal;
+	private String nombre_usuario; 
 	
 	@Column(name="fecha_solicitud")
 	@Temporal(TemporalType.DATE) 
@@ -70,6 +71,14 @@ public class Solicitud implements Serializable{
 
 	public void setId_sucursal(Long id_sucursal) {
 		this.id_sucursal = id_sucursal;
+	}
+
+	public String getSucursal() {
+		return sucursal;
+	}
+
+	public void setSucursal(String sucursal) {
+		this.sucursal = sucursal;
 	}
 
 	public String getNombre_usuario() {
