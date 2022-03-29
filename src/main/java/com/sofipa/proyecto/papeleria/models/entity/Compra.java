@@ -40,7 +40,7 @@ public class Compra implements Serializable{
 	private Long id_sucursal;
 	
 	@Column(name="nombre_sucursal")
-	private Long nombreSucursal;
+	private String nombre_sucursal;
 	
 	@Column(name="usuario")
 	private String usuario;
@@ -93,12 +93,12 @@ public class Compra implements Serializable{
 		this.id_sucursal = id_sucursal;
 	}
 	
-	public Long getNombresucursal() {
-		return nombreSucursal;
+	public String getNombre_sucursal() {
+		return nombre_sucursal;
 	}
 
-	public void setNombresucursal(Long nombreSucursal) {
-		this.nombreSucursal = nombreSucursal;
+	public void setNombre_sucursal(String nombre_sucursal) {
+		this.nombre_sucursal = nombre_sucursal;
 	}
 
 	public String getUsuario() {
