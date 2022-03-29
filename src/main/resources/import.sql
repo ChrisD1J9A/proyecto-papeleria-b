@@ -1,12 +1,11 @@
+INSERT INTO unidad (descripcion, estatus) VALUES ('--', 0); 
 INSERT INTO unidad (descripcion, estatus) VALUES ('Caja', 1);
 INSERT INTO unidad (descripcion, estatus) VALUES ('Paquete', 1);
 INSERT INTO unidad (descripcion, estatus) VALUES ('Pieza', 1);
-INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 2', 1);
 INSERT INTO unidad (descripcion, estatus) VALUES ('Caja 3', 0);
 
-
-INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('BOLIGRAFO BIC PUNTO MEDIANO AZUL CAJA C/12', 15.90, 15.99, 16.0,1, 'Producto de prueba', 1);
-INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('BOLIGRAFO BIC PUNTO MEDIANO NEGRO CAJA C/12', 29.90, 17.99, 18.0,1, 'Producto 2', 1);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('BOLIGRAFO BIC PUNTO MEDIANO AZUL CAJA C/12', 15.90, 15.99, 16.0,1, 'Producto de prueba', 2);
+INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('BOLIGRAFO BIC PUNTO MEDIANO NEGRO CAJA C/12', 29.90, 17.99, 18.0,1, 'Producto 2', 2);
 INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('ENGRAPADORA BOSTITCH B600 MEDIA TIRA NEGRO', 29.90, 17.99, 18.0,1, 'Producto 2', 3);
 INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('MARCATEXTO VISION AZOR COLOR AMARILLO C/2', 29.90, 17.99, 18.0,1, 'Producto 2', 2);
 INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('MARCADOR ESTERBROOK NEGRO BLISTER C/1 PIEZA BEROL', 29.90, 17.99, 18.0,1, 'Producto 2', 3);

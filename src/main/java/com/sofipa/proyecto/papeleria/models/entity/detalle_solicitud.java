@@ -1,7 +1,6 @@
 package com.sofipa.proyecto.papeleria.models.entity;
 
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -10,9 +9,7 @@ import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="detalle_solicitud")
@@ -25,7 +22,7 @@ public class detalle_solicitud implements Serializable {
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Solicitud solicitud;
 
-	@ManyToOne(optional = false ,  fetch = FetchType.EAGER)
+	@ManyToOne(optional= true, fetch= FetchType.EAGER)
 	@JoinColumn(name = "id_producto", referencedColumnName = "id_producto", insertable = false, updatable = false)
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Producto producto;

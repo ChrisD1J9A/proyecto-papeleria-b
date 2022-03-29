@@ -73,7 +73,7 @@ public class CompraRestController {
 		compraActual.setSolicitud(compra.getSolicitud());
 		compraActual.setProveedor(compra.getProveedor());
 		compraActual.setId_sucursal(compra.getId_sucursal());
-		compraActual.setNombresucursal(compra.getNombresucursal());
+		compraActual.setNombre_sucursal(compra.getNombre_sucursal());
 		compraActual.setUsuario(compra.getUsuario());
 		compraActual.setFecha_creacion(compra.getFecha_creacion());
 		compraActual.setGasto_total(compra.getGasto_total());
