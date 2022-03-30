@@ -36,12 +36,20 @@ public class MaxMinDeExistenciaController
 		return maxMinExistenciaService.findById(id);
 	}
 	
+	@GetMapping("/maxMinExistenciaS/{sucursal}")
+	public MaxMinDeExistencia existeSucursal (@PathVariable String sucursal) 
+	{
+		return maxMinExistenciaService.existeSucursal(sucursal);
+	}
+	
 	@PostMapping("/maxMinExistencia")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeExistencia create(@RequestBody MaxMinDeExistencia maxMinDeExistencia)
 	{
 		return maxMinExistenciaService.save(maxMinDeExistencia);
 	}
+	
+	
 	
 	@PutMapping("/maxMinExistencia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)

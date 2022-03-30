@@ -77,9 +77,8 @@ public class SolicitudRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public Solicitud update(@RequestBody Solicitud solicitud, @PathVariable Long id) {
 		Solicitud solicitudActual = solicitudService.findById(id);
-		solicitudActual.setId_usuario_aprob(solicitud.getId_usuario_aprob());
+		solicitudActual.setUsuario_aprob(solicitud.getUsuario_aprob());
 		solicitudActual.setId_sucursal(solicitud.getId_sucursal());
-		solicitudActual.setSucursal(solicitud.getSucursal());
 		solicitudActual.setNombre_sucursal(solicitud.getNombre_sucursal());
 		solicitudActual.setNombre_usuario(solicitud.getNombre_usuario());
 		solicitudActual.setFecha_solicitud(solicitud.getFecha_solicitud());

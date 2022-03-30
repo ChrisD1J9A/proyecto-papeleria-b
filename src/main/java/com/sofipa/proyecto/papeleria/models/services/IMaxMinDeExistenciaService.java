@@ -10,4 +10,6 @@ public List<MaxMinDeExistencia> findAll();
 	public MaxMinDeExistencia save (MaxMinDeExistencia maxMin);
 	
 	public MaxMinDeExistencia findById(Long id);
+	
+	public MaxMinDeExistencia existeSucursal (String sucursal);
 }

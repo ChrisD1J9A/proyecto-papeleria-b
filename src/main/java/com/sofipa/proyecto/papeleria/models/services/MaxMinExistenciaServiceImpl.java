@@ -28,4 +28,9 @@ public class MaxMinExistenciaServiceImpl implements IMaxMinDeExistenciaService{
 	public MaxMinDeExistencia findById(Long id) {
 		return maxMinExistenciaDao.findById(id).orElse(null);
 	}
+
+	@Override
+	public MaxMinDeExistencia existeSucursal(String sucursal) {
+		return maxMinExistenciaDao.existeSucursal(sucursal);
+	}
 }

@@ -19,9 +19,8 @@ public class Solicitud implements Serializable{
 	private Long id_solicitud;
 	
 	@Column
-	private Long id_usuario_aprob;
+	private String usuario_aprob;
 	private Long id_sucursal;
-	private String sucursal;
 	private String nombre_usuario; 
 	private String nombre_sucursal;
 	
@@ -58,12 +57,12 @@ public class Solicitud implements Serializable{
 		this.id_solicitud = id_solicitud;
 	}
 
-	public Long getId_usuario_aprob() {
-		return id_usuario_aprob;
+	public String getUsuario_aprob() {
+		return usuario_aprob;
 	}
 
-	public void setId_usuario_aprob(Long id_usuario_aprob) {
-		this.id_usuario_aprob = id_usuario_aprob;
+	public void setUsuario_aprob(String usuario_aprob) {
+		this.usuario_aprob = usuario_aprob;
 	}
 
 	public Long getId_sucursal() {
@@ -72,14 +71,6 @@ public class Solicitud implements Serializable{
 
 	public void setId_sucursal(Long id_sucursal) {
 		this.id_sucursal = id_sucursal;
-	}
-
-	public String getSucursal() {
-		return sucursal;
-	}
-
-	public void setSucursal(String sucursal) {
-		this.sucursal = sucursal;
 	}
 
 	public String getNombre_sucursal() {
