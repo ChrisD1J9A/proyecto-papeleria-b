@@ -23,7 +23,7 @@ public class MaxMinDeStock implements Serializable
 	private String usuario_modifico;
 	private int max_stock;
 	private int min_stock;
-	private String estatus; 
+	private int estatus; 
 
 	@Column(name="fecha_creacion")
 	@Temporal(TemporalType.DATE)
@@ -73,11 +73,11 @@ public class MaxMinDeStock implements Serializable
 		this.min_stock = min_stock;
 	}
 
-	public String getEstatus() {
+	public int getEstatus() {
 		return estatus;
 	}
 
-	public void setEstatus(String estatus) {
+	public void setEstatus(int estatus) {
 		this.estatus = estatus;
 	}
 

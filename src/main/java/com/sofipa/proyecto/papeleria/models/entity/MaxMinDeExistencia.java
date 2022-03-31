@@ -22,7 +22,7 @@ public class MaxMinDeExistencia implements Serializable {
 	private String usuario_modifico;
 	private int max_existencia;
 	private int min_existencia;
-	private String estatus;
+	private int estatus;
 
 	@Column(name = "fecha_creacion")
 	@Temporal(TemporalType.DATE)
@@ -72,11 +72,11 @@ public class MaxMinDeExistencia implements Serializable {
 		this.min_existencia = min_existencia;
 	}
 
-	public String getEstatus() {
+	public int getEstatus() {
 		return estatus;
 	}
 
-	public void setEstatus(String estatus) {
+	public void setEstatus(int estatus) {
 		this.estatus = estatus;
 	}
 
