@@ -27,9 +27,10 @@ public class DetalleSolicitudPFDCRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_solicitud_PFDC create (@RequestBody detalle_solicitud_PFDC ds)
 	{
-		SolicitudPFDCDetallePK solicitudDetallePK = new SolicitudPFDCDetallePK();
+		/*SolicitudPFDCDetallePK solicitudDetallePK = new SolicitudPFDCDetallePK();
 		solicitudDetallePK.setIdSolicitud(ds.getSolicitud().getId_solicitud());
 		ds.setSolicitudPFDCDetallePK(solicitudDetallePK);
+		return detalleSolicitudService.save(ds);*/
 		return detalleSolicitudService.save(ds);
 	}
 	

@@ -2,9 +2,12 @@ package com.sofipa.proyecto.papeleria.models.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
+//import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -14,11 +17,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="detalle_solicitud_PFDC")
 public class detalle_solicitud_PFDC implements Serializable {
-	@EmbeddedId
-	private SolicitudPFDCDetallePK solicitudPFDCDetallePK;
+	/*@EmbeddedId
+	private SolicitudPFDCDetallePK solicitudPFDCDetallePK;*/
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id_detalle_solicitud_PFDC;
 
-	@ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_solicitud", referencedColumnName = "id_solicitud", insertable = false, updatable = false)
+	@ManyToOne(optional = false, fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_solicitud", referencedColumnName = "id_solicitud")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Solicitud solicitud;
 
@@ -69,12 +75,20 @@ public class detalle_solicitud_PFDC implements Serializable {
 		this.cant_autorizada = cant_autorizada;
 	}
 	
-	public SolicitudPFDCDetallePK getSolicitudPFDCDetallePK() {
+	/*public SolicitudPFDCDetallePK getSolicitudPFDCDetallePK() {
 		return solicitudPFDCDetallePK;
 	}
 
 	public void setSolicitudPFDCDetallePK(SolicitudPFDCDetallePK solicitudPFDCDetallePK) {
 		this.solicitudPFDCDetallePK = solicitudPFDCDetallePK;
+	}*/
+	
+	public Long getId_detalle_solicitud_PFDC() {
+		return id_detalle_solicitud_PFDC;
+	}
+
+	public void setId_detalle_solicitud_PFDC(Long id_detalle_solicitud_PFDC) {
+		this.id_detalle_solicitud_PFDC = id_detalle_solicitud_PFDC;
 	}
 
 
