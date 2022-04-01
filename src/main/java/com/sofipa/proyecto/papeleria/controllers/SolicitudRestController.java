@@ -88,6 +88,7 @@ public class SolicitudRestController {
 		solicitudActual.setFecha_cancelacion(solicitud.getFecha_cancelacion());
 		solicitudActual.setObservacion_solicitud(solicitud.getObservacion_solicitud());
 		solicitudActual.setObservacion_aprobacion_rechazo(solicitud.getObservacion_aprobacion_rechazo());
+		solicitudActual.setPfdc(solicitud.isPfdc());
 		solicitudActual.setEstatus(solicitud.getEstatus());
 
 		return solicitudService.save(solicitudActual);

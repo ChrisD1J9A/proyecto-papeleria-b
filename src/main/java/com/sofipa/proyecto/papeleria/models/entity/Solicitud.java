@@ -47,6 +47,7 @@ public class Solicitud implements Serializable{
 	
 	private String observacion_solicitud;
 	private String observacion_aprobacion_rechazo;
+	private boolean pfdc;
 	private String estatus;
 	
 	public Long getId_solicitud() {
@@ -147,6 +148,14 @@ public class Solicitud implements Serializable{
 
 	public void setObservacion_aprobacion_rechazo(String observacion_aprobacion_rechazo) {
 		this.observacion_aprobacion_rechazo = observacion_aprobacion_rechazo;
+	}
+	
+	public boolean isPfdc() {
+		return pfdc;
+	}
+
+	public void setPfdc(boolean pfdc) {
+		this.pfdc = pfdc;
 	}
 
 	public String getEstatus() {
