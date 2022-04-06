@@ -21,6 +21,9 @@ public class Inventario implements Serializable {
 
 	@Column(name = "id_sucursal")
 	private Long id_sucursal;
+	
+	@Column(name = "nombre_sucursal")
+	private String nombre_sucursal;
 
 	@Column(name = "fecha_ultima_actualizacion")
 	@Temporal(TemporalType.DATE)
@@ -40,6 +43,14 @@ public class Inventario implements Serializable {
 
 	public void setId_sucursal(Long id_sucursal) {
 		this.id_sucursal = id_sucursal;
+	}
+
+	public String getNombre_sucursal() {
+		return nombre_sucursal;
+	}
+
+	public void setNombre_sucursal(String nombre_sucursal) {
+		this.nombre_sucursal = nombre_sucursal;
 	}
 
 	public Date getFecha_ultima_actualizacion() {

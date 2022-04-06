@@ -23,4 +23,9 @@ public class DetalleInventarioServiceImpl  implements IDetalleInventarioService{
 		return detalleInventarioDao.detalles_de_iventario(id);
 	}
 
+	@Override
+	public List<Object> todos_los_inventarios_ordenados() {
+		return detalleInventarioDao.todos_los_inventarios_ordenados();
+	}
+
 }

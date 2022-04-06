@@ -8,6 +8,6 @@ import com.sofipa.proyecto.papeleria.models.entity.Inventario;
 public interface IInventarioDao extends CrudRepository<Inventario, Long>{
 	@Query(value= "SELECT * \r\n"
 			+ "FROM db_papeleria.inventario i\r\n"
-			+ "WHERE i.id_inventario = :id", nativeQuery = true)
+			+ "WHERE i.id_sucursal = :id", nativeQuery = true)
 	Inventario findBySucursal(@Param("id") long id);  
 }

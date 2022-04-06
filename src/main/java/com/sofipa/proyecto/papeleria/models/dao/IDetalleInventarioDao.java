@@ -12,4 +12,6 @@ public interface IDetalleInventarioDao extends CrudRepository<detalle_inventario
 			+ "WHERE di.id_inventario= :id", nativeQuery = true)
 	List<detalle_inventario> detalles_de_iventario (@Param("id") long id);  
 
+	@Query(value= "SELECT i.nombre_sucursal, i.id_inventario, di.id_producto, di.cant_existente FROM inventario i, detalle_inventario di ORDER BY i.id_sucursal ASC;", nativeQuery = true)
+	List<Object> todos_los_inventarios_ordenados ();
 }

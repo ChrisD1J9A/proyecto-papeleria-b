@@ -56,7 +56,8 @@ public class InventarioRestController {
 	{
 		Inventario inventarioActual = inventarioService.findById(id);
 		inventarioActual.setFecha_ultima_actualizacion(inventario.getFecha_ultima_actualizacion());
-		inventarioActual.setId_sucursal(inventario.getId_inventario());
+		inventarioActual.setId_sucursal(inventario.getId_sucursal());
+		inventarioActual.setNombre_sucursal(inventario.getNombre_sucursal());
 		
 		return inventarioService.save(inventarioActual);
 	}

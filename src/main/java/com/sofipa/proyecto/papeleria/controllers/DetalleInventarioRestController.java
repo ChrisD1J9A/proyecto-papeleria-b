@@ -29,8 +29,8 @@ public class DetalleInventarioRestController {
 	public detalle_inventario create (@RequestBody detalle_inventario di)
 	{
 		InventarioDetallePK inventarioDetpk = new InventarioDetallePK();
-		inventarioDetpk.setIdProducto(di.getInventario().getId_inventario());
-		inventarioDetpk.setIdInventario(di.getProducto().getId_producto());
+		inventarioDetpk.setIdProducto(di.getProducto().getId_producto());
+		inventarioDetpk.setIdInventario(di.getInventario().getId_inventario());
 		di.setInventarioDetallePK(inventarioDetpk);
 		return detalleInventarioService.save(di);
 	}
@@ -48,10 +48,16 @@ public class DetalleInventarioRestController {
 		
 		return detalleInventarioService.detalles_de_inventario(id);
 	}
-	
+		
 	@GetMapping("/detalle_inventario/{id}")
 	public List<detalle_inventario> detalles_de_inv(@PathVariable Long id)
 	{
 		return detalleInventarioService.detalles_de_inventario(id);
+	}
+	
+	@GetMapping("/detalle_inventario/todos")
+	public List<Object> todos_inventarios()
+	{
+		return detalleInventarioService.todos_los_inventarios_ordenados();
 	}
 }

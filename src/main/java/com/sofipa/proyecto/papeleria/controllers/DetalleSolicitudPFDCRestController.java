@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.sofipa.proyecto.papeleria.models.entity.SolicitudPFDCDetallePK;
+//import com.sofipa.proyecto.papeleria.models.entity.SolicitudPFDCDetallePK;
 import com.sofipa.proyecto.papeleria.models.entity.detalle_solicitud_PFDC;
 import com.sofipa.proyecto.papeleria.models.services.IDetalleSolicitudPFDCService;
 
