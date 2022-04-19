@@ -30,7 +30,7 @@ public class MaxMinExistenciaServiceImpl implements IMaxMinDeExistenciaService{
 	}
 
 	@Override
-	public MaxMinDeExistencia existeSucursal(String sucursal) {
-		return maxMinExistenciaDao.existeSucursal(sucursal);
+	public MaxMinDeExistencia findBySucursal(String sucursal) {
+		return maxMinExistenciaDao.findBySucursal(sucursal);
 	}
 }

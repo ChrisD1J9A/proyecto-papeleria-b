@@ -27,4 +27,9 @@ public class MaxMinStockServiceImpl implements IMaxMinDeStockService{
 	public MaxMinDeStock findById(Long id) {
 		return maxMinStockDao.findById(id).orElse(null);
 	}
+
+	@Override
+	public MaxMinDeStock findBySucursal(String sucursal) {
+		return maxMinStockDao.findBySucursal(sucursal);
+	}
 }

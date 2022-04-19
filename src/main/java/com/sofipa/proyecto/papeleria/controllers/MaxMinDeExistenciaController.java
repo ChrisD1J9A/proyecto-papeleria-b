@@ -37,9 +37,9 @@ public class MaxMinDeExistenciaController
 	}
 	
 	@GetMapping("/maxMinExistenciaS/{sucursal}")
-	public MaxMinDeExistencia existeSucursal (@PathVariable String sucursal) 
+	public MaxMinDeExistencia showBySucursal (@PathVariable String sucursal) 
 	{
-		return maxMinExistenciaService.existeSucursal(sucursal);
+		return maxMinExistenciaService.findBySucursal(sucursal);
 	}
 	
 	@PostMapping("/maxMinExistencia")

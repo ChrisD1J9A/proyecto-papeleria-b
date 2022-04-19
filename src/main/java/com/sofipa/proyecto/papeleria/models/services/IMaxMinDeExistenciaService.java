@@ -11,5 +11,5 @@ public List<MaxMinDeExistencia> findAll();
 	
 	public MaxMinDeExistencia findById(Long id);
 	
-	public MaxMinDeExistencia existeSucursal (String sucursal);
+	public MaxMinDeExistencia findBySucursal (String sucursal);
 }

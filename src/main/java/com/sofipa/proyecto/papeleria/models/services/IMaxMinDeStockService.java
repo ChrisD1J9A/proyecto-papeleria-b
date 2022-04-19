@@ -10,4 +10,6 @@ public interface IMaxMinDeStockService {
 	public MaxMinDeStock save (MaxMinDeStock maxMin);
 	
 	public MaxMinDeStock findById(Long id);
+	
+	public MaxMinDeStock findBySucursal (String sucursal);
 }

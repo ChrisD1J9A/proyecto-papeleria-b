@@ -34,6 +34,12 @@ public class MaxMinDeStockController {
 		return maxMinStockService.findById(id);
 	}
 	
+	@GetMapping("/maxMinStockS/{id}")
+	public MaxMinDeStock showBySucursal(@PathVariable String sucursal) 
+	{
+		return maxMinStockService.findBySucursal(sucursal);
+	}
+	
 	@PostMapping("/maxMinStock")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeStock create(@RequestBody MaxMinDeStock maxMinDeStock)

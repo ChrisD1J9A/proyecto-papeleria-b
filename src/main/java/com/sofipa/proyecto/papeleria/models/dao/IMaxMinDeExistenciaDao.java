@@ -9,7 +9,7 @@ import com.sofipa.proyecto.papeleria.models.entity.MaxMinDeExistencia;
 public interface IMaxMinDeExistenciaDao extends CrudRepository<MaxMinDeExistencia, Long>{
 	@Query(value= "SELECT * \r\n"
 			+ "FROM db_papeleria.max_min_de_existencia MNE\r\n"
-			+ "WHERE MNE.sucursal= :sucursal", nativeQuery = true)
-	MaxMinDeExistencia existeSucursal (@Param("sucursal") String sucursal);
+			+ "WHERE MNE.sucursal= :sucursal AND MNE.estatus=1", nativeQuery = true)
+	MaxMinDeExistencia findBySucursal (@Param("sucursal") String sucursal);
 
 }
