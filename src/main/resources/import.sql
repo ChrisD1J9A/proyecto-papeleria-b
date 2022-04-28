@@ -12,7 +12,7 @@ INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, e
 INSERT INTO productos (descripcion, precio_iva, precio_subtotal, precio_total, estatus, observaciones, id_unidad) VALUES('MARCADOR PARA PIZARRON BLANCO BIC C/4 + BORRADOR', 29.90, 17.99, 18.0,1, 'Producto 2', 2);
 
 
-INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Default', 'Oaxaca', '000', '---', 0);
+INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Otro', 'Oaxaca', '000', '---', 0);
 INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Office Deapot', 'Plaza del valle', '9512598298', 'OFLAMSN', 1);
 INSERT INTO proveedores (nombre, direccion, telefono, rfc, estatus) VALUES ('Proveedora escolar', 'Centro Oaxaca de Juarez', '9512398498', 'PERASHF123', 1);
 

@@ -18,10 +18,11 @@ public class Proveedor implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_proveedor;
 	
-	@Column
+	@Column(nullable = false)
 	private String nombre;
 	private String direccion;
 	private String telefono;
+	@Column(nullable = false, unique = true)
 	private String rfc;
 	private int estatus;
 	
