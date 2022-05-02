@@ -26,7 +26,7 @@ public class Producto implements Serializable {
     @JoinColumn(name = "id_unidad", referencedColumnName = "id_unidad")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Unidad unidad;
-	@Column
+	@Column(nullable = false, unique = true)
 	private String descripcion;
 	private float precio_iva;
 	private float precio_subtotal;

@@ -92,7 +92,7 @@ public class CompraRestController {
 		if(!archivo.isEmpty())
 		{
 			String nombreArchivo = UUID.randomUUID().toString()+"_"+archivo.getOriginalFilename().replace(" ", "");
-			Path rutaArchivo = Paths.get("C:/Users/GERENTE REGIONAL/Documents/proyecto-papeleria/tickets").resolve(nombreArchivo).toAbsolutePath();
+			Path rutaArchivo = Paths.get("uploads/tickets").resolve(nombreArchivo).toAbsolutePath();
 			
 			try {
 				Files.copy(archivo.getInputStream(), rutaArchivo); //mover, copiar el achivo subida a la ruta definida
@@ -103,7 +103,7 @@ public class CompraRestController {
 			}
 			String archivoAnterior = compra.getTicket();
 			if(archivoAnterior !=null && archivoAnterior.length() >0) {
-				Path rutaArchivoAnterior = Paths.get("C:/Users/GERENTE REGIONAL/Documents/proyecto-papeleria/tickets").resolve(archivoAnterior).toAbsolutePath();
+				Path rutaArchivoAnterior = Paths.get("uploads/tickets").resolve(archivoAnterior).toAbsolutePath();
 				File archivoResAnterior = rutaArchivoAnterior.toFile();
 				if(archivoResAnterior.exists() && archivoResAnterior.canRead()) {
 					archivoResAnterior.delete();
@@ -121,7 +121,7 @@ public class CompraRestController {
 	
 	@GetMapping("/compras/show/archivo/{nombreArchivo:.+}")
 	public ResponseEntity<Resource> verArchivo(@PathVariable String nombreArchivo){
-		Path rutaArchivo = Paths.get("C:/Users/GERENTE REGIONAL/Documents/proyecto-papeleria/tickets").resolve(nombreArchivo).toAbsolutePath();
+		Path rutaArchivo = Paths.get("uploads/tickets").resolve(nombreArchivo).toAbsolutePath();
 		Resource recurso = null;
 		
 		try {
