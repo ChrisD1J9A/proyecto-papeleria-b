@@ -97,7 +97,7 @@ public class CompraRestController {
 			try {
 				Files.copy(archivo.getInputStream(), rutaArchivo); //mover, copiar el achivo subida a la ruta definida
 			} catch (IOException e) {
-				response.put("mensaje", "Error al subir la responsiva" + nombreArchivo);
+				response.put("mensaje", "Error al subir el ticket" + nombreArchivo);
 				response.put("error", e.getMessage().concat(": ").concat(e.getCause().getMessage()));
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
