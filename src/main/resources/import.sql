@@ -57,3 +57,17 @@ INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, ca
 //INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 6, 17, ' ', '2022-04-07'); 
 
 
+//PRUEBAS COMPRAS
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (31, 'CENTRO MB', 'Cristofher Diego', '2022-02-16', 5000, 'C:', 'La compra se efectuo cuidadosamente', 1, 1, 'Completada');
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (31, 'CENTRO MB', 'Cristofher Diego', '2022-03-16', 6000, 'C:', 'La compra se efectuo cuidadosamente', 2, 1, 'Completada');
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (31, 'CENTRO MB', 'Cristofher Diego', '2021-07-16', 7000, 'C:', 'La compra se efectuo cuidadosamente', 3, 1, 'Completada');
+
+
+INSERT INTO solicitudes (usuario_aprob, id_sucursal, nombre_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus, pfdc) VALUES ('Chris', 31, 'CENTRO MB', 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Se solicita los siguientes productos para poder cubrir las necesidades de la oficina', 'Para adquisiciones los productos solicitados suenan razonables y no hay problema, procedan con la adquisicion de productos', 'Aceptada', false);
+INSERT INTO solicitudes (usuario_aprob, id_sucursal, nombre_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus, pfdc) VALUES ('Chris', 31, 'CENTRO MB', 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Se solicita los siguientes productos para poder cubrir las necesidades de la oficina', 'aceptado', 'Aceptada', false);
+INSERT INTO solicitudes (usuario_aprob, id_sucursal, nombre_sucursal, nombre_usuario, fecha_solicitud, fecha_rechazo, fecha_aprobacion, fecha_abastecimiento, fecha_cancelacion, observacion_solicitud, observacion_aprobacion_rechazo, estatus, pfdc) VALUES ('Chris', 31, 'CENTRO MB', 'Diego', '2021-12-16', '2021-12-17', '2022-01-16', '2022-01-23', '2022-01-24', 'Se solicita los siguientes productos para poder cubrir las necesidades de la oficina', 'acep...', 'Aceptada', false);
+
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (2, 'EL BOSQUE', 'Cristofher Diego', '2022-02-16', 10000, 'C:', 'La compra se efectuo cuidadosamente', 4, 1, 'Completada');
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (2, 'EL BOSQUE', 'Cristofher Diego', '2022-03-16', 11000, 'C:', 'La compra se efectuo cuidadosamente', 5, 1, 'Completada');
+INSERT INTO compras (id_sucursal, nombre_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (2, 'EL BOSQUE', 'Cristofher Diego', '2021-07-16', 12000, 'C:', 'La compra se efectuo cuidadosamente', 6, 1, 'Completada');
+

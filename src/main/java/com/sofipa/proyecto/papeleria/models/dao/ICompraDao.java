@@ -12,4 +12,33 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 			+ "FROM db_papeleria.compras C\r\n"
 			+ "WHERE C.id_sucursal = :id", nativeQuery = true)
 	List <Compra> findBySucursal(@Param("id") long id);
+	
+	@Query(value="SELECT c.id_compra, c.nombre_sucursal, c.fecha_creacion, MAX(c.gasto_total) as Maximo \r\n"
+			   + "FROM db_papeleria.compras c\r\n"
+			   + "WHERE c.fecha_creacion >= date_sub(now(), interval :meses month)\r\n"
+			   + "GROUP BY c.nombre_sucursal\r\n"
+			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
+	List <Object> maximoGastoDeComprasPorSucursal(@Param("meses") int meses);
+	
+	
+	@Query(value="SELECT c.id_compra, c.nombre_sucursal, c.fecha_creacion, MAX(c.gasto_total) as Maximo \r\n"
+			   + "FROM db_papeleria.compras c\r\n"
+			   + "GROUP BY c.nombre_sucursal\r\n"
+			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
+	List <Object> maximoGastoDeComprasPorSucursalHistorico();
+	
+	
+	@Query(value="SELECT c.id_compra, c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
+			   + "FROM db_papeleria.compras c\r\n"
+			   + "WHERE c.fecha_creacion >= date_sub(now(), interval :meses month)\r\n"
+			   + "GROUP BY c.nombre_sucursal\r\n"
+			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
+	List <Object> gastoTotalDeComprasPorSucursal(@Param("meses") int meses);
+	
+	@Query(value="SELECT c.id_compra, c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
+			   + "FROM db_papeleria.compras c\r\n"
+			   + "GROUP BY c.nombre_sucursal\r\n"
+			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
+	List <Object> gastoTotalDeComprasPorSucursalHistorico();
+		
 }
