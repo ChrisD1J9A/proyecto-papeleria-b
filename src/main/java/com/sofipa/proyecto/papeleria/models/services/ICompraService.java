@@ -12,5 +12,12 @@ public interface ICompraService {
 	public Compra findById(Long id);
 	
 	public List <Compra> findBySucursal(Long id);
-
+	
+	public List <Object> maximoGastoDeComprasPorSucursal(int meses);
+	
+	public List <Object> maximoGastoDeComprasPorSucursalHistorico();
+	
+	public List <Object> gastoTotalDeComprasPorSucursal(int meses);
+	
+	public List <Object> gastoTotalDeComprasPorSucursalHistorico();
 }

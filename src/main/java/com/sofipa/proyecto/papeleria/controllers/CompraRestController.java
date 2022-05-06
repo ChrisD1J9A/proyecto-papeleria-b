@@ -97,7 +97,7 @@ public class CompraRestController {
 			try {
 				Files.copy(archivo.getInputStream(), rutaArchivo); //mover, copiar el achivo subida a la ruta definida
 			} catch (IOException e) {
-				response.put("mensaje", "Error al subir la responsiva" + nombreArchivo);
+				response.put("mensaje", "Error al subir el ticket" + nombreArchivo);
 				response.put("error", e.getMessage().concat(": ").concat(e.getCause().getMessage()));
 				return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
@@ -138,4 +138,29 @@ public class CompraRestController {
 		
 		return new ResponseEntity<Resource>(recurso, cabecera, HttpStatus.OK);
 	}
+	
+	@GetMapping("/compras/reportes/maxGasto/{meses}")
+	public List<Object> maximoGastoDeComprasPorSucursal(@PathVariable int meses)
+	{
+		return compraService.maximoGastoDeComprasPorSucursal(meses);
+	}
+	
+	@GetMapping("/compras/reportes/maxGasto")
+	public List<Object> maximoGastoDeComprasPorSucursalHistorico()
+	{
+		return compraService.maximoGastoDeComprasPorSucursalHistorico();
+	}
+	
+	@GetMapping("/compras/reportes/gastoTotal/{meses}")
+	public List<Object> gastoTotalDeComprasPorSucursal(@PathVariable int meses)
+	{
+		return compraService.gastoTotalDeComprasPorSucursal(meses);
+	}
+	
+	@GetMapping("/compras/reportes/gastoTotal")
+	public List<Object> gastoTotalDeComprasPorSucursalHistorico()
+	{
+		return compraService.gastoTotalDeComprasPorSucursalHistorico();
+	}
+	
 }

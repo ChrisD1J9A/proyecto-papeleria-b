@@ -33,4 +33,24 @@ public class CompraServiceImpl implements ICompraService{
 	public List <Compra> findBySucursal(Long id) {
 		return compraDao.findBySucursal(id);
 	}
+
+	@Override
+	public List<Object> maximoGastoDeComprasPorSucursal(int meses) {
+		return compraDao.maximoGastoDeComprasPorSucursal(meses);
+	}
+
+	@Override
+	public List<Object> maximoGastoDeComprasPorSucursalHistorico() {
+		return  compraDao.maximoGastoDeComprasPorSucursalHistorico();
+	}
+
+	@Override
+	public List<Object> gastoTotalDeComprasPorSucursal(int meses) {
+		return  compraDao.gastoTotalDeComprasPorSucursal(meses);
+	}
+
+	@Override
+	public List<Object> gastoTotalDeComprasPorSucursalHistorico() {
+		return  compraDao.gastoTotalDeComprasPorSucursalHistorico();
+	}
 }
