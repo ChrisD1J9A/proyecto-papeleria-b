@@ -21,12 +21,8 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-
 import com.sofipa.proyecto.papeleria.models.entity.Compra;
 import com.sofipa.proyecto.papeleria.models.services.ICompraService;
-
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -171,6 +167,12 @@ public class CompraRestController {
 	public List<Object> gastoTotalDeComprasPorSucursalHistorico()
 	{
 		return compraService.gastoTotalDeComprasPorSucursalHistorico();
+	}
+	
+	@GetMapping("/compras/reportes/gastoTotal/{fecha1}/{fecha2}")
+	public List<Object> gastoTotalDeComprasPorSucursalRangos(@PathVariable String fecha1, @PathVariable String fecha2)
+	{
+		return compraService.gastoTotalDeComprasPorSucursalRangoFechas(fecha1, fecha2);
 	}
 	
 }

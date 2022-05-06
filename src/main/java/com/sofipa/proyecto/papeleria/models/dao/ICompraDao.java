@@ -47,5 +47,12 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
 	List <Object> gastoTotalDeComprasPorSucursalHistorico();
+	
+	@Query(value="SELECT c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
+			   + "FROM db_papeleria.compras c\r\n"
+			   + "WHERE c.fecha_creacion BETWEEN :fecha1 AND :fecha2\r\n"
+			   + "GROUP BY c.nombre_sucursal\r\n"
+			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
+	List <Object> gastoTotalDeComprasPorSucursalRangoFechas(@Param("fecha1") String fecha1, @Param("fecha2") String fecha2);
 		
 }
