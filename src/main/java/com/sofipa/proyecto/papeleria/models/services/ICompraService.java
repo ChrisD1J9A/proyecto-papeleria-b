@@ -17,7 +17,10 @@ public interface ICompraService {
 	
 	public List <Object> maximoGastoDeComprasPorSucursalHistorico();
 	
+	public List <Object> maximoGastoDeComprasPorSucursalRangoFechas(String fecha1, String fecha2);
+	
 	public List <Object> gastoTotalDeComprasPorSucursal(int meses);
 	
 	public List <Object> gastoTotalDeComprasPorSucursalHistorico();
+
 }
