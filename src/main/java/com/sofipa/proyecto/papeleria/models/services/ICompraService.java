@@ -24,5 +24,8 @@ public interface ICompraService {
 	public List <Object> gastoTotalDeComprasPorSucursalHistorico();
 	
 	public List <Object> gastoTotalDeComprasPorSucursalRangoFechas(String fecha1, String fecha2);
+	
+	public List <Compra> comprasPorTiempo(int meses);
 
+	public List <Compra> comprasPorRangoFechas(String fecha1, String fecha2); 
 }

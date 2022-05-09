@@ -175,4 +175,16 @@ public class CompraRestController {
 		return compraService.gastoTotalDeComprasPorSucursalRangoFechas(fecha1, fecha2);
 	}
 	
+	@GetMapping("/compras/tiempo/{meses}")
+	public List<Compra> comprasPorTiempo (@PathVariable int meses)
+	{
+		return compraService.comprasPorTiempo(meses);
+	}
+	
+	@GetMapping("/compras/tiempo/{fecha1}/{fecha2}")
+	public List<Compra> comprasPorRangoFechas (@PathVariable String fecha1, @PathVariable String fecha2)
+	{
+		return compraService.comprasPorRangoFechas(fecha1, fecha2);
+	}
+	
 }

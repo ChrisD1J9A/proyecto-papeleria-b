@@ -63,4 +63,14 @@ public class CompraServiceImpl implements ICompraService{
 	public List<Object> gastoTotalDeComprasPorSucursalRangoFechas(String fecha1, String fecha2) {
 		return  compraDao.gastoTotalDeComprasPorSucursalRangoFechas(fecha1, fecha2);
 	}
+
+	@Override
+	public List<Compra> comprasPorTiempo(int meses) {
+		return compraDao.comprasPorTiempo(meses);
+	}
+
+	@Override
+	public List<Compra> comprasPorRangoFechas(String fecha1, String fecha2) {
+		return compraDao.comprasPorRangoFechas(fecha1, fecha2);
+	}
 }

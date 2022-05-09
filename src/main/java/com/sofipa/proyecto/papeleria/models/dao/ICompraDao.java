@@ -54,5 +54,15 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
 	List <Object> gastoTotalDeComprasPorSucursalRangoFechas(@Param("fecha1") String fecha1, @Param("fecha2") String fecha2);
-		
+	
+	
+	@Query(value="SELECT *\r\n"
+				+ "FROM compras c\r\n"
+				+ "WHERE c.fecha_creacion >= date_sub(now(), interval :meses month)", nativeQuery = true)
+	List <Compra> comprasPorTiempo(@Param("meses") int meses);
+	
+	@Query(value="SELECT * \r\n"
+			   + "FROM compras c\r\n"
+			   + "WHERE c.fecha_creacion BETWEEN :fecha1 AND :fecha2", nativeQuery = true)
+	List <Compra> comprasPorRangoFechas(@Param("fecha1") String fecha1, @Param("fecha2") String fecha2);
 }
