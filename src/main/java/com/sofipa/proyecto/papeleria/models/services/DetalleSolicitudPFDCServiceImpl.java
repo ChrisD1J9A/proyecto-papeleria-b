@@ -22,4 +22,9 @@ public class DetalleSolicitudPFDCServiceImpl implements IDetalleSolicitudPFDCSer
 	public detalle_solicitud_PFDC save(detalle_solicitud_PFDC ds) {
 		return detalleSolicitudDao.save(ds);
 	}
+
+	@Override
+	public List<detalle_solicitud_PFDC> findAll() {
+		return (List<detalle_solicitud_PFDC>) detalleSolicitudDao.findAll();
+	}
 }

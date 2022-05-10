@@ -52,4 +52,10 @@ public class DetalleSolicitudPFDCRestController {
 	{
 		return detalleSolicitudService.detalles_de_solicitud_PFDC(id);
 	}
+	
+	@GetMapping("/detalle_solicitud_PFDC")
+	public List<detalle_solicitud_PFDC> findALL()
+	{
+		return detalleSolicitudService.findAll();
+	}
 }
