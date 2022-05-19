@@ -11,22 +11,22 @@ import com.sofipa.proyecto.papeleria.models.entity.Producto;
 public class ProductoServicelmpl implements IProductoService{
 	@Autowired
 	private IProductoDao productoDao;
+	
+	//Servicio para buscar todos los productos disponibles en la base de datos
 	@Override
 	@Transactional(readOnly = true)
 	public List<Producto> findAll() {
 
 		return (List<Producto>) productoDao.findAll();
 	}
+	
+	//Servicio para guardar, almacenar, actualizar un producto en la base de datos
 	@Override
 	public Producto save(Producto producto) {
 		return productoDao.save(producto);
 	}
 	
-	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
+	//Servicio para buscar un producto mediante su identificador
 	@Override
 	public Producto findById(Long id) {
 		return productoDao.findById(id).orElse(null);

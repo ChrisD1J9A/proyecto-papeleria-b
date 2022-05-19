@@ -1,9 +1,13 @@
 package com.sofipa.proyecto.papeleria.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,42 +36,69 @@ public class UnidadRestController {
 	}
 	
 	@GetMapping("/unidades/{id}")
-	public Unidad show(@PathVariable Long id)
+	public ResponseEntity<?> show (@PathVariable Long id)
 	{
-		return unidadService.findById(id);
+		Unidad unidad = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			unidad = unidadService.findById(id);
+		}catch(DataAccessException e) {
+			response.put("mensaje", "error al realizar la consulta en la base de datos");
+			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		if(unidad == null) {
+			response.put("mensaje", "La unidad con el ID: ".concat(id.toString().concat(". No existe en la base de datos")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<Unidad>(unidad, HttpStatus.OK);
 	}
 	
 	@PostMapping("/unidades")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Unidad create (@RequestBody Unidad unidad)
+	public ResponseEntity<?> create (@RequestBody Unidad unidad)
 	{
-		return unidadService.save(unidad);
+		Unidad unidadNueva = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			unidadNueva = unidadService.save(unidad);
+		}catch (DataAccessException e){
+			response.put("mensaje", "error al realizar el insert en la base de datos");
+			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		response.put("mensaje","El producto ha sido creado con éxito");
+		response.put("producto", unidadNueva);
+		
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
 	
 	@PutMapping("/unidades/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Unidad update(@RequestBody Unidad unidad, @PathVariable Long id)
+	public ResponseEntity<?> update(@RequestBody Unidad unidad, @PathVariable Long id)
 	{
 		Unidad unidadActual = unidadService.findById(id);
+		Unidad unidadUpdated = null;
 		
-		unidadActual.setDescripcion(unidad.getDescripcion());
-		unidadActual.setEstatus(unidad.getEstatus());
+		Map<String, Object> response = new HashMap<>();
+		if(unidadActual == null){
+			response.put("mensaje", "Error: no se pudo editar, la unidad con el ID: ".concat(id.toString().concat(" No existe en la base de datos")));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		try {
+			unidadActual.setDescripcion(unidad.getDescripcion());
+			unidadActual.setEstatus(unidad.getEstatus());
+			unidadUpdated = unidadService.save(unidadActual);
+		}catch(DataAccessException e){
+			response.put("mensaje", "error al actualizar la base de datos");
+			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 		
-		return unidadService.save(unidadActual);
+		response.put("mensaje","La unidad ha sido actualizado con éxito");
+		response.put("unidado", unidadUpdated);
+		
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	
-	@PutMapping("/unidadB/{id}")
-	@ResponseStatus(HttpStatus.CREATED)
-	public Unidad baja(@RequestBody Unidad unidad, @PathVariable Long id)
-	{
-		Unidad unidadActual = unidadService.findById(id);
-		unidadActual.setEstatus(0);
-		return unidadService.save(unidadActual);
-	}
-	/*@DeleteMapping("/unidad/{id}")
-	 * @ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id)
-	{
-		unidadService.delete(id);
-	}*/
 }

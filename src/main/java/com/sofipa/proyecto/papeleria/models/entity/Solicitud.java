@@ -23,7 +23,6 @@ public class Solicitud implements Serializable{
 	private Long id_sucursal;
 	private String nombre_usuario; 
 	private String nombre_sucursal;
-	
 	@Column(name="fecha_solicitud")
 	@Temporal(TemporalType.DATE) 
 	private Date fecha_solicitud;
@@ -43,8 +42,6 @@ public class Solicitud implements Serializable{
 	@Column(name="fecha_cancelacion")
 	@Temporal(TemporalType.DATE)
 	private Date fecha_cancelacion;
-	
-	
 	private String observacion_solicitud;
 	private String observacion_aprobacion_rechazo;
 	private boolean pfdc;

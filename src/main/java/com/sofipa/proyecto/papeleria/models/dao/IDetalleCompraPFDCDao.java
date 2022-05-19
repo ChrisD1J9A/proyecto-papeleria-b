@@ -7,6 +7,10 @@ import java.util.List;
 
 public interface IDetalleCompraPFDCDao extends CrudRepository<detalle_compra_PFDC, Long>{
 	
+	/*
+	 * Se consulta en la base de datos todos los detalle de compra con productos fuera del catalogo
+	 *  pertenecientes a una compra, por ello la busqueda mediante su id_compra
+	 * */
 	@Query(value= "SELECT * \r\n"
 			+ "FROM db_papeleria.detalle_compra_PFDC ds\r\n"
 			+ "WHERE ds.id_compra= :id", nativeQuery = true)

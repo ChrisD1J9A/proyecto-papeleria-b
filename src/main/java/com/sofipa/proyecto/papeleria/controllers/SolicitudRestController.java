@@ -10,17 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.entity.Solicitud;
-import com.sofipa.proyecto.papeleria.models.entity.detalle_solicitud;
-import com.sofipa.proyecto.papeleria.models.services.IDetalleSolicitudService;
 import com.sofipa.proyecto.papeleria.models.services.ISolicitudService;
-import org.springframework.dao.DataAccessException;
-import java.util.HashMap;
-import java.util.Map;
-import org.springframework.http.ResponseEntity;
 
 @CrossOrigin(origins = { "http://localhost:4200" })
 @RestController
@@ -28,8 +21,6 @@ import org.springframework.http.ResponseEntity;
 public class SolicitudRestController {
 	@Autowired
 	private ISolicitudService solicitudService;
-	@Autowired
-	private IDetalleSolicitudService detalleSolicitudService;
 
 	@GetMapping("/solicitudes")
 	public List<Solicitud> index() {
@@ -53,7 +44,7 @@ public class SolicitudRestController {
 		return solicitudService.save(solicitud);
 	}
 
-	@PostMapping("/solicitudesDet")
+	/*@PostMapping("/solicitudesDet")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> createS(@RequestBody Solicitud solicitud, @RequestParam("detalles") detalle_solicitud detalles[]) {
 		Solicitud solicitudNew = null;
@@ -71,7 +62,7 @@ public class SolicitudRestController {
 
 		}
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
-	}
+	}*/
  
 	@PutMapping("/solicitudes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)

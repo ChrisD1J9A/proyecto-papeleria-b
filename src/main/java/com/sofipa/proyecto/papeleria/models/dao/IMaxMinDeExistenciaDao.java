@@ -7,6 +7,9 @@ import org.springframework.data.repository.query.Param;
 import com.sofipa.proyecto.papeleria.models.entity.MaxMinDeExistencia;
 
 public interface IMaxMinDeExistenciaDao extends CrudRepository<MaxMinDeExistencia, Long>{
+	/*
+	 * Se realiza una consulta en la base de datos en donde se obtiene la configuracion de una determinada sucursal
+	 * */
 	@Query(value= "SELECT * \r\n"
 			+ "FROM db_papeleria.max_min_de_existencia MNE\r\n"
 			+ "WHERE MNE.sucursal= :sucursal AND MNE.estatus=1", nativeQuery = true)

@@ -36,10 +36,6 @@ public class detalle_compra implements Serializable {
 	private int cant_autorizada;
 	@Column(name="cant_comprada")
 	private int cant_comprada;
-	@Column(name="precio_unitario")
-	private float precio_unitario;
-	@Column(name="precio_total")
-	private float precio_total;
 
 	public CompraDetallePK getCompraDetallePK() {
 		return compraDetallePK;
@@ -95,22 +91,6 @@ public class detalle_compra implements Serializable {
 
 	public void setCant_comprada(int cant_comprada) {
 		this.cant_comprada = cant_comprada;
-	}
-
-	public float getPrecio_unitario() {
-		return precio_unitario;
-	}
-
-	public void setPrecio_unitario(float precio_unitario) {
-		this.precio_unitario = precio_unitario;
-	}
-
-	public float getPrecio_total() {
-		return precio_total;
-	}
-
-	public void setPrecio_total(float precio_total) {
-		this.precio_total = precio_total;
 	}
 
 	private static final long serialVersionUID = 1L;

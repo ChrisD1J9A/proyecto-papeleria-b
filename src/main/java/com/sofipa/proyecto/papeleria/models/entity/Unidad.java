@@ -16,7 +16,8 @@ public class Unidad implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_unidad;
-	@Column
+	
+	@Column(nullable = false, unique = true)
 	private String descripcion;
 	private int estatus;
 
@@ -43,14 +44,11 @@ public class Unidad implements Serializable {
 	public void setEstatus(int estatus) {
 		this.estatus = estatus;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "Unidad descripcion " + descripcion + "";
 	}
-
-
 
 	private static final long serialVersionUID = 1L;
 }

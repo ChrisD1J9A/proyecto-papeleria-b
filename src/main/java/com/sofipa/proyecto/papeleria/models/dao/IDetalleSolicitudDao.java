@@ -8,13 +8,12 @@ import java.util.List;
 
 public interface IDetalleSolicitudDao extends CrudRepository<detalle_solicitud, Long>{
 	
+	/*
+	 * Consulta en la base de datos la cual busca todos los detalles de solicitud de acuerdo al id_solicitud,
+	 * En otras palabras se consultan los detalles de solicitud que pertenecen a una determinada solicitud. 
+	 * */
 	@Query(value= "SELECT * \r\n"
 			+ "FROM db_papeleria.detalle_solicitud ds\r\n"
 			+ "WHERE ds.id_solicitud= :id", nativeQuery = true)
 	List<detalle_solicitud> detalles_de_solicitud(@Param("id") long id);  
-	
-	@Query(value = "SELECT * \r\n"
-			+ "FROM db_papeleria.detalle_solicitud ds\r\n"
-			+ "WHERE ds.id_solicitud = :id", nativeQuery = true)
-	List<detalle_solicitud> soloDetallesSolicitud(@Param("id") long id);
 }

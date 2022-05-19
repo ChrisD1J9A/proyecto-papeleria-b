@@ -9,6 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -34,6 +37,7 @@ public class detalle_inventario implements Serializable {
 	private String estatus;
 
 	@Column(name = "fecha_ultima_actualizacion")
+	@Temporal(TemporalType.DATE)
 	private Date fecha_ultima_actualizacion;
 
 	public InventarioDetallePK getInventarioDetallePK() {

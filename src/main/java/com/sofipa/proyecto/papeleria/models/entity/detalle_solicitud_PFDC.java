@@ -17,8 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="detalle_solicitud_PFDC")
 public class detalle_solicitud_PFDC implements Serializable {
-	/*@EmbeddedId
-	private SolicitudPFDCDetallePK solicitudPFDCDetallePK;*/
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_detalle_solicitud_PFDC;
@@ -27,9 +25,7 @@ public class detalle_solicitud_PFDC implements Serializable {
 	@JoinColumn(name = "id_solicitud", referencedColumnName = "id_solicitud")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	private Solicitud solicitud;
-
 	private String nombreProducto;
-
 	@Column
 	private int cant_existente;
 	private int cant_solicitada;	
@@ -74,14 +70,6 @@ public class detalle_solicitud_PFDC implements Serializable {
 	public void setCant_autorizada(int cant_autorizada) {
 		this.cant_autorizada = cant_autorizada;
 	}
-	
-	/*public SolicitudPFDCDetallePK getSolicitudPFDCDetallePK() {
-		return solicitudPFDCDetallePK;
-	}
-
-	public void setSolicitudPFDCDetallePK(SolicitudPFDCDetallePK solicitudPFDCDetallePK) {
-		this.solicitudPFDCDetallePK = solicitudPFDCDetallePK;
-	}*/
 	
 	public Long getId_detalle_solicitud_PFDC() {
 		return id_detalle_solicitud_PFDC;
