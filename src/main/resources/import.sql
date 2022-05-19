@@ -40,21 +40,21 @@ INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, ca
 INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 3);
 INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 4);
 
-//INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (2, 'EL BOSQUE', '2022-04-07');
-//INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (31, 'CENTRO MB', '2022-04-07');
+INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (2, 'EL BOSQUE', '2022-04-07');
+INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (31, 'CENTRO MB', '2022-04-07');
 
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 1, 13, ' ', '2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 2, 13, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 3, 13, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 4, 13, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 5, 13, ' ', '2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 6, 13, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 1, 12, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 2, 13, ' ',	'2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 3, 14, ' ', '2022-04-07');
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 4, 15, ' ', '2022-04-07'); 
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 5, 16, ' ', '2022-04-07'); 
-//INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 6, 17, ' ', '2022-04-07'); 
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 1, 13, ' ', '2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 2, 13, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 3, 13, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 4, 13, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 5, 13, ' ', '2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (1, 6, 13, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 1, 12, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 2, 13, ' ',	'2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 3, 14, ' ', '2022-04-07');
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 4, 15, ' ', '2022-04-07'); 
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 5, 16, ' ', '2022-04-07'); 
+INSERT INTO detalle_inventario (id_inventario, id_producto, cant_existente, estatus, fecha_ultima_actualizacion) VALUES (2, 6, 17, ' ', '2022-04-07'); 
 
 
 //PRUEBAS COMPRAS

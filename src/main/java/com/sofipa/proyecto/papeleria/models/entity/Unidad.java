@@ -16,7 +16,8 @@ public class Unidad implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_unidad;
-	@Column
+	
+	@Column(nullable = false, unique = true)
 	private String descripcion;
 	private int estatus;
 
