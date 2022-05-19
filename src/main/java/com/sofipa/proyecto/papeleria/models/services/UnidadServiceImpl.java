@@ -11,24 +11,22 @@ import com.sofipa.proyecto.papeleria.models.entity.Unidad;
 public class UnidadServiceImpl implements IUnidadService{
 	@Autowired
 	private IUnidadDao unidadDao;
+	
+	//Servicio para obtener todas las unidades disponibles en la base de datos
 	@Override
 	@Transactional(readOnly = true)
 	public List<Unidad> findAll() {
 		return (List<Unidad>) unidadDao.findAll();
 	}
 	
+	//Servicio para Guardar, almacenar o actualizar una Unidad en la base de datos
 	@Override
 	@Transactional
 	public Unidad save(Unidad unidad) {
 		return unidadDao.save(unidad);
 	}
 	
-	@Override
-	@Transactional
-	public void delete(Long id) {
-		
-	}
-	
+	//Servicio para buscar una unidad mediante su id
 	@Override
 	@Transactional(readOnly = true)
 	public Unidad findById(Long id) {

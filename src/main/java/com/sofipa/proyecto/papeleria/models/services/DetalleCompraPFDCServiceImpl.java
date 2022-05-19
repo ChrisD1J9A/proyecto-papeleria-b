@@ -12,12 +12,16 @@ public class DetalleCompraPFDCServiceImpl implements IDetalleCompraPFDCService{
 	@Autowired
 	private IDetalleCompraPFDCDao detalleCompraDao;
 	
+	/*Servicio para guardar, crear, actualizar un detalle compra con productos fuera del catalogo 
+	 *en la base de datos*/
 	@Override
 	@Transactional(readOnly = true)
 	public List<detalle_compra_PFDC> detalles_de_compra_PFDC(long id) {
 		return detalleCompraDao.detalles_de_compra_PFDC(id); 
 	}
-
+	
+	/*Servicio para obtener los detalles de compra con productos fuera del catalogo de una Compra 
+	 *(mediante id_compra)*/
 	@Override
 	public detalle_compra_PFDC save(detalle_compra_PFDC ds) {
 		return detalleCompraDao.save(ds);

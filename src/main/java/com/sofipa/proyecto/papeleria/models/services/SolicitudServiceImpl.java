@@ -14,28 +14,26 @@ public class SolicitudServiceImpl implements ISolicitudService{
 	@Autowired
 	private ISolicitudDao solicitudDao;
 	
+	//Servicio para obtener todas las Solicitudes de la base de datos
 	@Override
 	@Transactional(readOnly = true)
 	public List<Solicitud> findAll() {
 		return (List<Solicitud>) solicitudDao.findAll();
 	}
-
+	
+	//Servicio para guardar, almacenar, actualizar una solicitud
 	@Override
 	public Solicitud save(Solicitud solicitud) {
 		return solicitudDao.save(solicitud);
 	}
 
-	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	//Servicio para buscar una solicitud mediane su identificador
 	@Override
 	public Solicitud findById(Long id) {
 		return solicitudDao.findById(id).orElse(null);
 	}
-
+	
+	//Servicio para buscar las solicitudes de una sucursal
 	@Override
 	public List<Solicitud> findBySucursal(Long id) {
 		return solicitudDao.findBySucursal(id);
