@@ -45,7 +45,7 @@ public class DetalleSolicitudRestController {
 			detalleSolicitudService.save(detaActual);
 		}
 		
-		return detalleSolicitudService.soloDetallesSolicitud(id);
+		return detalleSolicitudService.detalles_de_solicitud(id);
 	}	
 	
 	@GetMapping("/detalle_solicitud/{id}")

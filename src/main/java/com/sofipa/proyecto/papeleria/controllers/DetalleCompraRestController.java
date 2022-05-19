@@ -45,7 +45,7 @@ public class DetalleCompraRestController {
 			detalleCompraService.save(detaActual);
 		}
 		
-		return detalleCompraService.soloDetallesCompra(id);
+		return detalleCompraService.detalles_de_compra(id);
 		
 	}
 	

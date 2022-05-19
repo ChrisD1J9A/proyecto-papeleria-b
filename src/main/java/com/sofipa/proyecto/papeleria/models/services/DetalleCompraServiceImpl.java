@@ -24,11 +24,4 @@ public class DetalleCompraServiceImpl implements IDetalleCompraService{
 	public List<detalle_compra> detalles_de_compra(long id) {
 		return detalleCompraDao.detalles_de_compra(id);
 	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public List<detalle_compra> soloDetallesCompra(long id) {
-		return  detalleCompraDao.soloDetallesCompra(id);
-	}
-
 }

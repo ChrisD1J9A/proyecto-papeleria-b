@@ -44,14 +44,11 @@ public class Unidad implements Serializable {
 	public void setEstatus(int estatus) {
 		this.estatus = estatus;
 	}
-	
 
 	@Override
 	public String toString() {
 		return "Unidad descripcion " + descripcion + "";
 	}
-
-
 
 	private static final long serialVersionUID = 1L;
 }

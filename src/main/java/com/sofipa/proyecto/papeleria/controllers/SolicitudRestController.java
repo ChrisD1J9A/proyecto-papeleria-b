@@ -28,8 +28,8 @@ import org.springframework.http.ResponseEntity;
 public class SolicitudRestController {
 	@Autowired
 	private ISolicitudService solicitudService;
-	@Autowired
-	private IDetalleSolicitudService detalleSolicitudService;
+	/*@Autowired
+	private IDetalleSolicitudService detalleSolicitudService;*/
 
 	@GetMapping("/solicitudes")
 	public List<Solicitud> index() {
@@ -53,7 +53,7 @@ public class SolicitudRestController {
 		return solicitudService.save(solicitud);
 	}
 
-	@PostMapping("/solicitudesDet")
+	/*@PostMapping("/solicitudesDet")
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<?> createS(@RequestBody Solicitud solicitud, @RequestParam("detalles") detalle_solicitud detalles[]) {
 		Solicitud solicitudNew = null;
@@ -71,7 +71,7 @@ public class SolicitudRestController {
 
 		}
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
-	}
+	}*/
  
 	@PutMapping("/solicitudes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)

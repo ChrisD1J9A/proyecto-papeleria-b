@@ -23,10 +23,4 @@ public class DetalleSolicitudServiceImpl implements IDetalleSolicitudService{
 	public List<detalle_solicitud> detalles_de_solicitud(long id) {
 		return detalleSolicitudDao.detalles_de_solicitud(id); 
 	}
-
-	@Override
-	@Transactional(readOnly = true)
-	public List<detalle_solicitud> soloDetallesSolicitud(long id) {
-		return detalleSolicitudDao.soloDetallesSolicitud(id);
-	}
 }

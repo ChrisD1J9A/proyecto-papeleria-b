@@ -7,6 +7,5 @@ public interface IDetalleSolicitudService {
 	
 	public detalle_solicitud save (detalle_solicitud ds);
 	public List<detalle_solicitud> detalles_de_solicitud (long id);
-	public List<detalle_solicitud> soloDetallesSolicitud (long id);
 	
 }
