@@ -19,20 +19,18 @@ public class MailController {
 	
 	
 	/*
-	 * envia correo electronico
+	 * Método para enviar un correo electronico
 	 * */
 	@PostMapping("/correo")
 	public Mail enviarCorreo(@RequestBody Mail correo) {
-		System.out.println(correo);
-		System.out.println("------------");
-		System.out.println("Correo enviado con exito...");
 		try {
 			SimpleMailMessage message = new SimpleMailMessage();
+			//Se asigna al correo a aenviar los datos correspondientes
 			message.setTo(correo.getPara());
 			message.setSubject(correo.getAsunto());
 			message.setText(correo.getMensaje());
+			//Se envía el correo electrónico
 			mailSenderObj.send(message);
-			System.out.println("Correo enviado con exito...");
 		}catch(Exception e) {
 			System.out.println("error:"+ e);
 		}

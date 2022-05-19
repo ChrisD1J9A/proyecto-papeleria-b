@@ -24,24 +24,28 @@ public class MaxMinDeExistenciaController
 	@Autowired 
 	private IMaxMinDeExistenciaService maxMinExistenciaService;
 	
+	//Método para obtener todas las configuraciones 
 	@GetMapping("/maxMinExistencia")
 	public List<MaxMinDeExistencia> index()
 	{
 		return maxMinExistenciaService.findAll();
 	}
 	
+	//Método para obtener una configuración mediante su id
 	@GetMapping("/maxMinExistencia/{id}")
 	public MaxMinDeExistencia show(@PathVariable Long id) 
 	{
 		return maxMinExistenciaService.findById(id);
 	}
 	
+	//Método para obtener la configuración de una determinada sucursal
 	@GetMapping("/maxMinExistenciaS/{sucursal}")
 	public MaxMinDeExistencia showBySucursal (@PathVariable String sucursal) 
 	{
 		return maxMinExistenciaService.findBySucursal(sucursal);
 	}
 	
+	//Método para crear una nueva configuración
 	@PostMapping("/maxMinExistencia")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeExistencia create(@RequestBody MaxMinDeExistencia maxMinDeExistencia)
@@ -49,8 +53,7 @@ public class MaxMinDeExistenciaController
 		return maxMinExistenciaService.save(maxMinDeExistencia);
 	}
 	
-	
-	
+	//Método para  actualizar una nueva configuración
 	@PutMapping("/maxMinExistencia/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeExistencia update(@RequestBody MaxMinDeExistencia maxMinDeExistencia, @PathVariable Long id)

@@ -25,10 +25,11 @@ public class MailConfig {
 
 		javaMailSender.setHost("smtp.gmail.com");
 		javaMailSender.setPort(587);
+		//Se establece la dirección de correo electrónico que estará emitiendo los correos 
 		javaMailSender.setUsername("control.papeleria2022@gmail.com");
+		//Se define la contraseña obtenida para aplicaciones
 		javaMailSender.setPassword("xeiinzolwgujpful");
 		javaMailSender.setJavaMailProperties(getMailProperties());
-		//controlPapeleria.
 
 		return javaMailSender;
 	}

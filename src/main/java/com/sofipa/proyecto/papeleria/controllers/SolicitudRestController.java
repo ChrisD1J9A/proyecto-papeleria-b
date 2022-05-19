@@ -21,23 +21,27 @@ import com.sofipa.proyecto.papeleria.models.services.ISolicitudService;
 public class SolicitudRestController {
 	@Autowired
 	private ISolicitudService solicitudService;
-
+	
+	//Método que devuelve todos las solicitudes de la base de datos
 	@GetMapping("/solicitudes")
 	public List<Solicitud> index() {
 		return solicitudService.findAll();
 	}
 	
+	//Método que devuelve todas las solicitudes de una determinada sucursal
 	@GetMapping("/solicitudes/sucursal/{id}")
 	public List <Solicitud> showSS(@PathVariable Long id)
 	{
 		return solicitudService.findBySucursal(id);
 	}
-
+	
+	//Método que devuelve una solicitud mediante su identificador(id_solicitud)
 	@GetMapping("/solicitudes/{id}")
 	public Solicitud show(@PathVariable Long id) {
 		return solicitudService.findById(id);
 	}
-
+	
+	//Método para crear una nueva Solicitud
 	@PostMapping("/solicitudes")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Solicitud create(@RequestBody Solicitud solicitud) {
@@ -63,11 +67,14 @@ public class SolicitudRestController {
 		}
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}*/
- 
+	
+	//Método para actualizar una nueva solicitud
 	@PutMapping("/solicitudes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Solicitud update(@RequestBody Solicitud solicitud, @PathVariable Long id) {
+		//Se busca la solicitud a actualizar en la base de datos
 		Solicitud solicitudActual = solicitudService.findById(id);
+		//Se realizan los posibles cambios
 		solicitudActual.setUsuario_aprob(solicitud.getUsuario_aprob());
 		solicitudActual.setId_sucursal(solicitud.getId_sucursal());
 		solicitudActual.setNombre_sucursal(solicitud.getNombre_sucursal());
@@ -81,7 +88,7 @@ public class SolicitudRestController {
 		solicitudActual.setObservacion_aprobacion_rechazo(solicitud.getObservacion_aprobacion_rechazo());
 		solicitudActual.setPfdc(solicitud.isPfdc());
 		solicitudActual.setEstatus(solicitud.getEstatus());
-
+		//Y se actualiza la solicitud
 		return solicitudService.save(solicitudActual);
 	}
 

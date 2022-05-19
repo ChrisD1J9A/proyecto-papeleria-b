@@ -22,24 +22,28 @@ public class MaxMinDeStockController {
 	@Autowired 
 	private IMaxMinDeStockService maxMinStockService;
 	
+	//Método para obtener todas las configuraciones 
 	@GetMapping("/maxMinStock")
 	public List<MaxMinDeStock> index()
 	{
 		return maxMinStockService.findAll();
 	}
 	
+	//Método para obtener una configuración mediante su id
 	@GetMapping("/maxMinStock/{id}")
 	public MaxMinDeStock show(@PathVariable Long id) 
 	{
 		return maxMinStockService.findById(id);
 	}
 	
+	//Método para obtener la configuración de una determinada sucursal
 	@GetMapping("/maxMinStockS/{sucursal}")
 	public MaxMinDeStock showBySucursal(@PathVariable String sucursal) 
 	{
 		return maxMinStockService.findBySucursal(sucursal);
 	}
 	
+	//Método para crear una nueva configuración
 	@PostMapping("/maxMinStock")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeStock create(@RequestBody MaxMinDeStock maxMinDeStock)
@@ -47,6 +51,7 @@ public class MaxMinDeStockController {
 		return maxMinStockService.save(maxMinDeStock);
 	}
 	
+	//Método para  actualizar una nueva configuración
 	@PutMapping("/maxMinStock/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public MaxMinDeStock update(@RequestBody MaxMinDeStock maxMinDeStock, @PathVariable Long id)

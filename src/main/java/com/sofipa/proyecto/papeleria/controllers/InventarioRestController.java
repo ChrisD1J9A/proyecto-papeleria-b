@@ -24,24 +24,28 @@ public class InventarioRestController {
 	@Autowired 
 	private IInventarioService inventarioService;
 	
+	//Metodo  para obtener todos los inventarios
 	@GetMapping("/inventario")
 	public List<Inventario> index ()
 	{
 		return inventarioService.findAll();
 	}
 	
+	//Metodo para obtener un inventario mediante su id
 	@GetMapping("/inventario/{id}")
 	public Inventario show (@PathVariable Long id) 
 	{
 		return inventarioService.findById(id);
 	}
 	
+	//Metodo para obtener un Inventario mediante la sucursal al que pertenece
 	@GetMapping("/inventario/Sucursal/{id}")
 	public Inventario showIS (@PathVariable Long id) 
 	{
 		return inventarioService.findBySucursal(id);
 	}
 	
+	//Metodo para crear un nuevo Inventario
 	@PostMapping("/inventario")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Inventario create (@RequestBody Inventario inventario)
@@ -49,7 +53,7 @@ public class InventarioRestController {
 		return inventarioService.save(inventario);
 	}
 	
-	
+	//Metodo para actualizar un inventario
 	@PutMapping("/inventario/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Inventario update (@RequestBody Inventario inventario, @PathVariable Long id)
