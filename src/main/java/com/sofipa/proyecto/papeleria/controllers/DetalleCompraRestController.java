@@ -37,7 +37,6 @@ public class DetalleCompraRestController {
 		return detalleCompraService.save(dc);//Se guarda y devuelve el objeto creado
 	}
 	
-	
 	//Método utilizado para realizar un UPDATE de un grupo de detalles de compra
 	@PutMapping("/detalle_compra/{id}")
 	@ResponseStatus(HttpStatus.CREATED)

@@ -94,7 +94,6 @@ public class CompraRestController {
 		Map<String, Object> response = new HashMap<>();
 		//Se busca la compra a la que se asocia el ticket(Archivo)
 		Compra compra = compraService.findById(id);
-		
 		//Se valida si el archivo existe
 		if(!archivo.isEmpty())
 		{
@@ -124,13 +123,11 @@ public class CompraRestController {
 			compra.setTicket(nombreArchivo);
 			//Se actualiza la compra
 			compraService.save(compra);
-			
 			//Se manda la compra en conjunto con el nombre del archivo subido 
 			response.put("compra", compra);
 			response.put("mensaje", "Ha subido correctamente el ticket: " + nombreArchivo);
 		}
-		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
-		
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);	
 	}
 	
 	//Método para Obtener un Archivo para Verlo ó Descargar
@@ -149,7 +146,8 @@ public class CompraRestController {
 			throw new RuntimeException("Error no se pudo cargar el archivo: " + nombreArchivo);
 		}
 		HttpHeaders cabecera = new HttpHeaders();
-		cabecera.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + recurso.getFilename() + "\""); //para forzar la descarga
+		//para forzar la descarga
+		cabecera.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + recurso.getFilename() + "\""); 
 		
 		return new ResponseEntity<Resource>(recurso, cabecera, HttpStatus.OK);
 	}
