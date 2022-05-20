@@ -24,37 +24,43 @@ public class DetalleInventarioRestController {
 	@Autowired
 	private IDetalleInventarioService detalleInventarioService;
 	
+	//Método para crear, almacenar un detalle de inventario 
 	@PostMapping("/detalle_inventario")
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_inventario create (@RequestBody detalle_inventario di)
 	{
+		//Para una entidad cuya Primary key se compone de dos 
+		//id_inventario e id_producto, se asigna al objeto mediante el InventarioDetallePK para definirse
 		InventarioDetallePK inventarioDetpk = new InventarioDetallePK();
 		inventarioDetpk.setIdProducto(di.getProducto().getId_producto());
 		inventarioDetpk.setIdInventario(di.getInventario().getId_inventario());
-		di.setInventarioDetallePK(inventarioDetpk);
-		return detalleInventarioService.save(di);
+		di.setInventarioDetallePK(inventarioDetpk);//Se asigna al detalle compra su PK antes de guardar
+		return detalleInventarioService.save(di);//Se guarda y devuelve el objeto creado
 	}
 	
+	//Método utilizado para realizar un UPDATE de un grupo de detalles de inventario 
 	@PutMapping("/detalle_inventario/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public List<detalle_inventario> update(@RequestBody detalle_inventario [] detalles_i, @PathVariable Long id)
 	{
 		detalle_inventario detaActual = new detalle_inventario();
-		for(int i=0; i< detalles_i.length; i++)
+		for(int i=0; i< detalles_i.length; i++)//Se hace un ciclo for recorriendo todo el arreglo
 		{
-			detaActual = detalles_i[i];
-			detalleInventarioService.save(detaActual);
+			detaActual = detalles_i[i];//Cada miembro del arreglo se va asignando al objeto anteriormente creado
+			detalleInventarioService.save(detaActual);//Se actualiza en la base de datos
 		}
 		
-		return detalleInventarioService.detalles_de_inventario(id);
+		return detalleInventarioService.detalles_de_inventario(id);//Se devuelven los detalles actualizados
 	}
 		
+	//Método para obtener todos los detalles de inventario mediante el id_inventario
 	@GetMapping("/detalle_inventario/{id}")
 	public List<detalle_inventario> detalles_de_inv(@PathVariable Long id)
 	{
 		return detalleInventarioService.detalles_de_inventario(id);
 	}
 	
+	//Método para obtener todos los inventarios disponibles con datos en específico y ordenados
 	@GetMapping("/detalle_inventario/todos")
 	public List<Object> todos_inventarios()
 	{

@@ -22,6 +22,7 @@ public class DetalleCompraPFDCRestController {
 	@Autowired
 	private IDetalleCompraPFDCService detalleCompraService;
 	 
+	//Método para crear, almacenar un detalle copra con productos fuera del catalogo 
 	@PostMapping("/detalle_compra_PFDC")
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_compra_PFDC create (@RequestBody detalle_compra_PFDC ds)
@@ -29,20 +30,22 @@ public class DetalleCompraPFDCRestController {
 		return detalleCompraService.save(ds);
 	}
 	
+	//Método para realizar un UPDATE de un grupo de detalles de compra con productos fuera del catálogo
 	@PutMapping("/detalle_compra_PFDC/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public List<detalle_compra_PFDC> update(@RequestBody detalle_compra_PFDC [] detalles_f, @PathVariable Long id)
 	{
 		detalle_compra_PFDC detaActual = new detalle_compra_PFDC();
-		for(int i=0; i< detalles_f.length; i++)
+		for(int i=0; i< detalles_f.length; i++)//Se hace un ciclo for recorriendo todo el arreglo
 		{
-			detaActual = detalles_f[i];
-			detalleCompraService.save(detaActual);
+			detaActual = detalles_f[i]; //Cada miembro del arreglo se va asignando al objeto anteriormente creado
+			detalleCompraService.save(detaActual);//Se actualiza en la base de datos
 		}
 		
-		return detalleCompraService.detalles_de_compra_PFDC(id);
+		return detalleCompraService.detalles_de_compra_PFDC(id);//Se devuelven los detalles actualizados
 	}	
 	
+	//Método para obtener todos los detalles de compra con productos fuera del catalogo mediante el id_compra
 	@GetMapping("/detalle_compra_PFDC/{id}")
 	public List<detalle_compra_PFDC> detalles_de_com(@PathVariable Long id)
 	{

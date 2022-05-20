@@ -23,31 +23,36 @@ public class DetalleSolicitudRestController {
 	@Autowired
 	private IDetalleSolicitudService detalleSolicitudService;
 	
+	//Método para crear, almacenar un detalle solicitud
 	@PostMapping("/detalle_solicitud")
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_solicitud create (@RequestBody detalle_solicitud ds)
 	{
+		//Para una entidad cuya Primary key se compone de dos 
+		//id_solicitud e id_producto, se asigna al objeto mediante el SolicitudDetallePK para definirse
 		SolicitudDetallePK solicitudDetallePK = new SolicitudDetallePK();
 		solicitudDetallePK.setIdSolicitud(ds.getSolicitud().getId_solicitud());
 		solicitudDetallePK.setIdProducto(ds.getProducto().getId_producto());
-		ds.setSolicitudDetallePK(solicitudDetallePK);
-		return detalleSolicitudService.save(ds);
+		ds.setSolicitudDetallePK(solicitudDetallePK);//Se asigna al detalle solicitud su PK antes de guardar
+		return detalleSolicitudService.save(ds);//Se guarda y devuelve el objeto creado
 	}
 	
+	//Método utilizado para realizar un UPDATE de un grupo de detalles de solicitud
 	@PutMapping("/detalle_solicitud/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public List<detalle_solicitud> update(@RequestBody detalle_solicitud [] detalles_f, @PathVariable Long id)
 	{
 		detalle_solicitud detaActual = new detalle_solicitud();
-		for(int i=0; i< detalles_f.length; i++)
+		for(int i=0; i< detalles_f.length; i++)//Se hace un ciclo for recorriendo todo el arreglo
 		{
-			detaActual = detalles_f[i];
-			detalleSolicitudService.save(detaActual);
+			detaActual = detalles_f[i];//Cada miembro del arreglo se va asignando al objeto anteriormente creado
+			detalleSolicitudService.save(detaActual);//Se actualiza en la base de datos
 		}
 		
-		return detalleSolicitudService.detalles_de_solicitud(id);
+		return detalleSolicitudService.detalles_de_solicitud(id);//Se devuelven los detalles actualizados
 	}	
 	
+	//Método para obtener todos los detalles de compra mediante el id_compra
 	@GetMapping("/detalle_solicitud/{id}")
 	public List<detalle_solicitud> detalles_de_sol(@PathVariable Long id)
 	{
