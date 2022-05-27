@@ -19,7 +19,7 @@ import com.sofipa.proyecto.papeleria.models.entity.Producto;
 import com.sofipa.proyecto.papeleria.models.services.IProductoService;
 
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class ProductoRestController {

@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.entity.detalle_compra_PFDC;
 import com.sofipa.proyecto.papeleria.models.services.IDetalleCompraPFDCService;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class DetalleCompraPFDCRestController {
 	@Autowired
 	private IDetalleCompraPFDCService detalleCompraService;
 	 
-	//Método para crear, almacenar un detalle copra con productos fuera del catalogo 
+	//Método para crear, almacenar un detalle compra con productos fuera del catalogo 
 	@PostMapping("/detalle_compra_PFDC")
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_compra_PFDC create (@RequestBody detalle_compra_PFDC ds)

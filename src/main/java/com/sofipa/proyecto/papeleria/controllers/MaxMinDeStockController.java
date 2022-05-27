@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.services.IMaxMinDeStockService;
 import com.sofipa.proyecto.papeleria.models.entity.MaxMinDeStock;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class MaxMinDeStockController {

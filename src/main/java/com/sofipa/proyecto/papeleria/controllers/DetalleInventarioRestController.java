@@ -17,7 +17,7 @@ import com.sofipa.proyecto.papeleria.models.entity.detalle_inventario;
 import com.sofipa.proyecto.papeleria.models.services.IDetalleInventarioService;
 import com.sofipa.proyecto.papeleria.models.entity.InventarioDetallePK;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class DetalleInventarioRestController {

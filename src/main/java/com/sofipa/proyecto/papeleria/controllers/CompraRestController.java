@@ -30,7 +30,7 @@ import java.util.UUID;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 
-@CrossOrigin(origins = { "http://localhost:4200" })
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class CompraRestController {
@@ -101,7 +101,7 @@ public class CompraRestController {
 			//los nombres de los archivos en su destino
 			String nombreArchivo = UUID.randomUUID().toString()+"_"+archivo.getOriginalFilename().replace(" ", "");
 			//Se define la ruta dónde se almacenaran los archivos
-			Path rutaArchivo = Paths.get("uploads/tickets").resolve(nombreArchivo).toAbsolutePath();
+			Path rutaArchivo = Paths.get("uploads").resolve(nombreArchivo).toAbsolutePath();
 			
 			try {
 				Files.copy(archivo.getInputStream(), rutaArchivo); //mover, copiar el achivo subida a la ruta definida
@@ -113,7 +113,7 @@ public class CompraRestController {
 			}
 			String archivoAnterior = compra.getTicket();
 			if(archivoAnterior !=null && archivoAnterior.length() >0) {
-				Path rutaArchivoAnterior = Paths.get("uploads/tickets").resolve(archivoAnterior).toAbsolutePath();
+				Path rutaArchivoAnterior = Paths.get("uploads").resolve(archivoAnterior).toAbsolutePath();
 				File archivoResAnterior = rutaArchivoAnterior.toFile();
 				if(archivoResAnterior.exists() && archivoResAnterior.canRead()) {
 					archivoResAnterior.delete();
@@ -133,7 +133,7 @@ public class CompraRestController {
 	//Método para Obtener un Archivo para Verlo ó Descargar
 	@GetMapping("/compras/show/archivo/{nombreArchivo:.+}")
 	public ResponseEntity<Resource> verArchivo(@PathVariable String nombreArchivo){
-		Path rutaArchivo = Paths.get("uploads/tickets").resolve(nombreArchivo).toAbsolutePath();
+		Path rutaArchivo = Paths.get("uploads").resolve(nombreArchivo).toAbsolutePath();
 		Resource recurso = null;
 		
 		try {

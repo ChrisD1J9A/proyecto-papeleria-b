@@ -16,7 +16,7 @@ import com.sofipa.proyecto.papeleria.models.entity.CompraDetallePK;
 import com.sofipa.proyecto.papeleria.models.entity.detalle_compra;
 import com.sofipa.proyecto.papeleria.models.services.IDetalleCompraService;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class DetalleCompraRestController {
