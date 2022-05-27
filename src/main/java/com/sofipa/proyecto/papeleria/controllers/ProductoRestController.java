@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.entity.Producto;
 import com.sofipa.proyecto.papeleria.models.services.IProductoService;
 
-
 @CrossOrigin(origins= {"*"}, maxAge = 3600)
 @RestController
 @RequestMapping("/api")

@@ -207,5 +207,4 @@ public class CompraRestController {
 	{
 		return compraService.comprasPorRangoFechas(fecha1, fecha2);
 	}
-	
 }

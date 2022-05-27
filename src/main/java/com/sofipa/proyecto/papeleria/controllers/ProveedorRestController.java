@@ -116,5 +116,4 @@ public class ProveedorRestController {
 		
 		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.CREATED);
 	}
-	
 }

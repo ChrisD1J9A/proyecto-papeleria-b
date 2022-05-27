@@ -71,5 +71,4 @@ public class SolicitudRestController {
 		//Y se actualiza la solicitud
 		return solicitudService.save(solicitudActual);
 	}
-
 }

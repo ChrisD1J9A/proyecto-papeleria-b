@@ -58,4 +58,4 @@ public class DetalleSolicitudRestController {
 	{
 		return detalleSolicitudService.detalles_de_solicitud(id);
 	}
-}
+} 

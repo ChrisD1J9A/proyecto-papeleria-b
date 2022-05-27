@@ -19,7 +19,7 @@ public class MailController {
 	
 	
 	/*
-	 * Método para enviar un correo electronico
+	 * Método para enviar un correo electrónico
 	 * */
 	@PostMapping("/correo")
 	public Mail enviarCorreo(@RequestBody Mail correo) {
