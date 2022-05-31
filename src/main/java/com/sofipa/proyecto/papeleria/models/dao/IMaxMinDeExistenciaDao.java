@@ -11,7 +11,7 @@ public interface IMaxMinDeExistenciaDao extends CrudRepository<MaxMinDeExistenci
 	 * Se realiza una consulta en la base de datos en donde se obtiene la configuracion de una determinada sucursal
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.max_min_de_existencia MNE\r\n"
+			+ "FROM max_min_de_existencia MNE\r\n"
 			+ "WHERE MNE.sucursal= :sucursal AND MNE.estatus=1", nativeQuery = true)
 	MaxMinDeExistencia findBySucursal (@Param("sucursal") String sucursal);
 

@@ -45,14 +45,14 @@ public class DetalleSolicitudPFDCRestController {
 		return detalleSolicitudService.detalles_de_solicitud_PFDC(id);//Se devuelven los detalles actualizados
 	}	
 	
-	//Método para obtener todos los detalles de compra con productos fuera del catalogo mediante el id_compra
+	//Método para obtener todos los detalles de solicitud con productos fuera del catalogo mediante el id_compra
 	@GetMapping("/detalle_solicitud_PFDC/{id}")
 	public List<detalle_solicitud_PFDC> detalles_de_sol(@PathVariable Long id)
 	{
 		return detalleSolicitudService.detalles_de_solicitud_PFDC(id);
 	}
 	
-	//Método para obtener todos los detalles de compra con productos fuera del catalogo
+	//Método para obtener todos los detalles de solicitud con productos fuera del catalogo
 	@GetMapping("/detalle_solicitud_PFDC")
 	public List<detalle_solicitud_PFDC> findALL()
 	{

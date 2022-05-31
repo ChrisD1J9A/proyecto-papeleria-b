@@ -12,7 +12,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * Se busca en la base de datos las compras pertenecientes a una Sucursal en específico
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.compras C\r\n"
+			+ "FROM compras C\r\n"
 			+ "WHERE C.id_sucursal = :id", nativeQuery = true)
 	List <Compra> findBySucursal(@Param("id") long id);
 	
@@ -21,7 +21,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * específico, por ejemplo los últimos 6 meses 
 	 * */
 	@Query(value="SELECT c.id_compra, c.nombre_sucursal, c.fecha_creacion, MAX(c.gasto_total) as Maximo \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "WHERE c.fecha_creacion >= date_sub(now(), interval :meses month)\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
@@ -31,7 +31,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 *Se consulta en la base de datos las compras con mayores gastos en las sucursales sin intervalos de tiempo(Histórico)
 	 * */
 	@Query(value="SELECT c.id_compra, c.nombre_sucursal, c.fecha_creacion, MAX(c.gasto_total) as Maximo \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
 	List <Object> maximoGastoDeComprasPorSucursalHistorico();
@@ -41,7 +41,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * de acuerdo a un rango de fechas especificados
 	 * */
 	@Query(value="SELECT c.id_compra, c.nombre_sucursal, c.fecha_creacion, MAX(c.gasto_total) as Maximo \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "WHERE c.fecha_creacion BETWEEN :fecha1 AND :fecha2\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC;", nativeQuery = true)
@@ -52,7 +52,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * por ejemplo en los últimos 6 meses
 	 * */
 	@Query(value="SELECT c.id_compra, c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "WHERE c.fecha_creacion >= date_sub(now(), interval :meses month)\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
@@ -62,7 +62,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * Se consulta en la base de datos el gasto total efectuado en las compras de cada sucursal desde siempre (Histórico)
 	 * */
 	@Query(value="SELECT c.id_compra, c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)
 	List <Object> gastoTotalDeComprasPorSucursalHistorico();
@@ -72,7 +72,7 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 	 * en específico
 	 * */
 	@Query(value="SELECT c.nombre_sucursal, SUM(c.gasto_total) as Gasto_total \r\n"
-			   + "FROM db_papeleria.compras c\r\n"
+			   + "FROM compras c\r\n"
 			   + "WHERE c.fecha_creacion BETWEEN :fecha1 AND :fecha2\r\n"
 			   + "GROUP BY c.nombre_sucursal\r\n"
 			   + "ORDER BY c.gasto_total DESC", nativeQuery = true)

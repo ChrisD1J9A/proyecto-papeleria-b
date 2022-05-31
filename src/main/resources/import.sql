@@ -35,10 +35,10 @@ INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada,
 INSERT INTO detalle_solicitud (cant_existente, cant_solicitada, cant_autorizada, id_solicitud, id_producto) VALUES (12, 20, 10, 3, 4);
 
 //INSERT INTO compras (id_sucursal, usuario, fecha_creacion, gasto_total, ticket, observaciones, id_solicitud, id_proveedor, estatus) VALUES (1, 'Cristofher Diego', '2022-02-16', 5000, 'C:', 'La compra se efectuo cuidadosamente', 1, 1, 'Completada');
-INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 16.0, 16.0, 1 , 1);
-INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 2);
-INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 3);
-INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 4);
+//INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 16.0, 16.0, 1 , 1);
+//INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 2);
+//INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 3);
+//INSERT INTO detalle_compra (cant_existente, cant_solicitada, cant_autorizada, cant_comprada, precio_unitario, precio_total, id_compra, id_producto) VALUES (12, 20, 10, 10, 18.0, 18.0, 1 , 4);
 
 INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (2, 'EL BOSQUE', '2022-04-07');
 INSERT INTO inventario (id_sucursal, nombre_sucursal, fecha_ultima_actualizacion) VALUES (31, 'CENTRO MB', '2022-04-07');

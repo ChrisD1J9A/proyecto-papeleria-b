@@ -12,7 +12,7 @@ public interface IDetalleInventarioDao extends CrudRepository<detalle_inventario
 	 * id_inventario al cual se asocian
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.detalle_inventario di\r\n"
+			+ "FROM detalle_inventario di\r\n"
 			+ "WHERE di.id_inventario= :id", nativeQuery = true)
 	List<detalle_inventario> detalles_de_iventario (@Param("id") long id);  
 	

@@ -12,7 +12,7 @@ public interface IDetalleCompraPFDCDao extends CrudRepository<detalle_compra_PFD
 	 *  pertenecientes a una compra, por ello la busqueda mediante su id_compra
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.detalle_compra_PFDC ds\r\n"
-			+ "WHERE ds.id_compra= :id", nativeQuery = true)
+			+ "FROM detalle_compra_PFDC dc\r\n"
+			+ "WHERE dc.id_compra= :id", nativeQuery = true)
 	List<detalle_compra_PFDC> detalles_de_compra_PFDC (@Param("id") long id);  
 }

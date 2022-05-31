@@ -12,7 +12,7 @@ public interface IDetalleSolicitudPFDCDao extends CrudRepository<detalle_solicit
 	 * de acuerdo al id_solicitud,
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.detalle_solicitud_PFDC ds\r\n"
+			+ "FROM detalle_solicitud_PFDC ds\r\n"
 			+ "WHERE ds.id_solicitud= :id", nativeQuery = true)
 	List<detalle_solicitud_PFDC> detalles_de_solicitud_PFDC (@Param("id") long id);  
 }

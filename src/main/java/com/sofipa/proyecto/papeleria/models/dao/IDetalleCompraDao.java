@@ -13,7 +13,7 @@ public interface IDetalleCompraDao extends CrudRepository<detalle_compra, Long> 
 	 * su id_compra
 	 * */
 	@Query(value= "SELECT * \r\n"
-			+ "FROM db_papeleria.detalle_compra dc\r\n"
+			+ "FROM detalle_compra dc\r\n"
 			+ "WHERE dc.id_compra= :id", nativeQuery = true)
 	List<detalle_compra> detalles_de_compra(@Param("id") long id);  
 }
