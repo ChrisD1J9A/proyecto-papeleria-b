@@ -71,7 +71,7 @@ public class ProductoRestController {
 			productoNew = productoService.save(producto);
 		}catch (DataAccessException e){
 			//En caso de haber errores se manejan en esta área
-			response.put("mensaje", "error al realizar el insert en la base de datos");
+			response.put("mensaje", "Error al registrar el producto, producto ya existente");
 			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -95,7 +95,7 @@ public class ProductoRestController {
 		Map<String, Object> response = new HashMap<>();
 		//Se corrobora que el producto a actualizar exista en la base de datos, en caso de no existir se notifica
 		if (productoActual == null) {
-			response.put("mensaje", "Error: no se pudo editar, el producot con el ID: ".concat(id.toString().concat(" No existe en la base de datos")));
+			response.put("mensaje", "Error: no se pudo editar, el producto con el ID: ".concat(id.toString().concat(" No existe en la base de datos")));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
 		}
 		

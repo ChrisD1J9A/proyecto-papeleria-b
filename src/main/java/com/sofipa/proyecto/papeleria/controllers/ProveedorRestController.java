@@ -70,7 +70,7 @@ public class ProveedorRestController {
 			proveedorNew = proveedorService.save(proveedor);
 		}catch(DataAccessException e){
 			//En caso de haber errores se manejan en esta área
-			response.put("mensaje", "error al realizar el insert en la base de datos");
+			response.put("mensaje", "Error al registrar el proveedor, proveedor existente");
 			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}

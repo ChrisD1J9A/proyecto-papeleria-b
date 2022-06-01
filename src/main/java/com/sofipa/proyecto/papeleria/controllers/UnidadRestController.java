@@ -69,7 +69,7 @@ public class UnidadRestController {
 			
 			//En el catch se manejan los posibles errores y se notifica al usuario de los mismos
 		}catch (DataAccessException e){
-			response.put("mensaje", "error al realizar el insert en la base de datos");
+			response.put("mensaje", "Error al ingresar la unidad, unidad existente");
 			response.put("error", e.getMessage().concat(" : ").concat(e.getMostSpecificCause().getLocalizedMessage()));
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
