@@ -1,8 +1,13 @@
 package com.sofipa.proyecto.papeleria.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,8 +42,25 @@ public class SolicitudRestController {
 	
 	//Método que devuelve una solicitud mediante su identificador(id_solicitud)
 	@GetMapping("/solicitudes/{id}")
-	public Solicitud show(@PathVariable Long id) {
-		return solicitudService.findById(id);
+	public ResponseEntity<?> show(@PathVariable Long id) {
+		Solicitud solicitud = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			solicitud = solicitudService.findById(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "error al obtener el dato");
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		if (solicitud == null) {
+			response.put("mensaje", "¡el ID:" + id + " no existe!");
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		} else {
+			// Si la solicitud por su ID se encontro manda la solicitud y un mensaje de
+			// exito
+			response.put("mensaje", "encontrado con exito");
+			response.put("solicitud", solicitud);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+		}
 	}
 	
 	//Método para crear una nueva Solicitud

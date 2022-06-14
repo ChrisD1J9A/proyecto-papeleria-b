@@ -1,8 +1,13 @@
 package com.sofipa.proyecto.papeleria.controllers;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,9 +36,25 @@ public class InventarioRestController {
 	
 	//Metodo para obtener un inventario mediante su id
 	@GetMapping("/inventario/{id}")
-	public Inventario show (@PathVariable Long id) 
-	{
-		return inventarioService.findById(id);
+	public ResponseEntity<?> show(@PathVariable Long id) {
+		Inventario inventario = null;
+		Map<String, Object> response = new HashMap<>();
+		try {
+			inventario = inventarioService.findById(id);
+		} catch (DataAccessException e) {
+			response.put("mensaje", "error al obtener el dato");
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		}
+		if (inventario == null) {
+			response.put("mensaje", "¡el ID:" + id + " no existe!");
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.NOT_FOUND);
+		} else {
+			// Si el inventario por su ID se encontro manda mismo y un mensaje de
+			// exito
+			response.put("mensaje", "encontrado con exito");
+			response.put("inventario", inventario);
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
+		}
 	}
 	
 	//Metodo para obtener un Inventario mediante la sucursal al que pertenece
