@@ -12,7 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "maxMinDeStock")
+@Table(name = "max_min_de_stock")
 public class MaxMinDeStock implements Serializable
 {
 	@Id

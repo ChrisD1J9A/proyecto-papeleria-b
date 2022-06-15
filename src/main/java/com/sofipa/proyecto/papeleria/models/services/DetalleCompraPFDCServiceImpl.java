@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.sofipa.proyecto.papeleria.models.dao.IDetalleCompraPFDCDao;
-import com.sofipa.proyecto.papeleria.models.entity.detalle_compra_PFDC;
+import com.sofipa.proyecto.papeleria.models.entity.detalle_compra_pfdc;
 
 @Service
 public class DetalleCompraPFDCServiceImpl implements IDetalleCompraPFDCService{
@@ -16,14 +16,14 @@ public class DetalleCompraPFDCServiceImpl implements IDetalleCompraPFDCService{
 	 *en la base de datos*/
 	@Override
 	@Transactional(readOnly = true)
-	public List<detalle_compra_PFDC> detalles_de_compra_PFDC(long id) {
-		return detalleCompraDao.detalles_de_compra_PFDC(id); 
+	public List<detalle_compra_pfdc> detalles_de_compra_pfdc(long id) {
+		return detalleCompraDao.detalles_de_compra_pfdc(id); 
 	}
 	
 	/*Servicio para obtener los detalles de compra con productos fuera del catalogo de una Compra 
 	 *(mediante id_compra)*/
 	@Override
-	public detalle_compra_PFDC save(detalle_compra_PFDC ds) {
+	public detalle_compra_pfdc save(detalle_compra_pfdc ds) {
 		return detalleCompraDao.save(ds);
 	}
 }

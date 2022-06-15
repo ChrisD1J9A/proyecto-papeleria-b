@@ -2,44 +2,43 @@ package com.sofipa.proyecto.papeleria.models.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
+//import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name="detalle_compra_PFDC")
-public class detalle_compra_PFDC implements Serializable {
+@Table(name="detalle_solicitud_pfdc")
+public class detalle_solicitud_pfdc implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_detalle_compra_PFDC;
+	private Long id_detalle_solicitud_pfdc;
 
 	@ManyToOne(optional = false, fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_compra", referencedColumnName = "id_compra")
+	@JoinColumn(name = "id_solicitud", referencedColumnName = "id_solicitud")
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
-	private Compra compra;
-
+	private Solicitud solicitud;
 	private String nombreProducto;
-
 	@Column
 	private int cant_existente;
 	private int cant_solicitada;	
 	private int cant_autorizada;
-	private int cant_comprada;
+
+	public Solicitud getSolicitud() {
+		return solicitud;
+	}
+
+	public void setSolicitud(Solicitud solicitud) {
+		this.solicitud = solicitud;
+	}
 	
-	public Compra getCompra() {
-		return compra;
-	}
-
-	public void setCompra(Compra compra) {
-		this.compra = compra;
-	}
-
 	public String getNombreProducto() {
 		return nombreProducto;
 	}
@@ -71,21 +70,13 @@ public class detalle_compra_PFDC implements Serializable {
 	public void setCant_autorizada(int cant_autorizada) {
 		this.cant_autorizada = cant_autorizada;
 	}
-
-	public int getCant_comprada() {
-		return cant_comprada;
+	
+	public Long getId_detalle_solicitud_pfdc() {
+		return id_detalle_solicitud_pfdc;
 	}
 
-	public void setCant_comprada(int cant_comprada) {
-		this.cant_comprada = cant_comprada;
-	}
-
-	public Long getId_detalle_compra_PFDC() {
-		return id_detalle_compra_PFDC;
-	}
-
-	public void setId_detalle_compra_PFDC(Long id_detalle_compra_PFDC) {
-		this.id_detalle_compra_PFDC = id_detalle_compra_PFDC;
+	public void setId_detalle_solicitud_pfdc(Long id_detalle_solicitud_pfdc) {
+		this.id_detalle_solicitud_pfdc = id_detalle_solicitud_pfdc;
 	}
 
 
