@@ -80,7 +80,7 @@ public class CompraRestController {
 		return compraService.save(compra);
 	}
 
-	// Método para actualizar una nueva solicitud
+	// Método para actualizar una nueva compra
 	@PutMapping("/compras/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Compra update(@RequestBody Compra compra, @PathVariable Long id) {

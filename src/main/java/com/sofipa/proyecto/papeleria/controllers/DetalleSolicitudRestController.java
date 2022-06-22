@@ -52,7 +52,7 @@ public class DetalleSolicitudRestController {
 		return detalleSolicitudService.detalles_de_solicitud(id);//Se devuelven los detalles actualizados
 	}	
 	
-	//Método para obtener todos los detalles de compra mediante el id_compra
+	//Método para obtener todos los detalles de solicitud mediante el id_solicitud
 	@GetMapping("/detalle_solicitud/{id}")
 	public List<detalle_solicitud> detalles_de_sol(@PathVariable Long id)
 	{
