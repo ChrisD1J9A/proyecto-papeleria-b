@@ -34,8 +34,8 @@ public class CompraServiceImpl implements ICompraService{
 	
 	//Servicio para obtener las compras pertenecientes a una Sucursal en específico
 	@Override
-	public List <Compra> findBySucursal(Long id) {
-		return compraDao.findBySucursal(id);
+	public List <Compra> findByIdSucursal(Long id) {
+		return compraDao.findByIdSucursal(id);
 	}
 	
 	/*Servicio para obtener compras con mayores gastos en las sucursales y en un intervalo de tiempo

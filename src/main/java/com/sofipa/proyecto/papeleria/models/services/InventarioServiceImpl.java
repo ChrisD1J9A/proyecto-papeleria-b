@@ -33,8 +33,8 @@ public class InventarioServiceImpl implements IInventarioService{
 
 	//Servicio para obtener un inventario perteneciente a una Sucursal en específico
 	@Override
-	public Inventario findBySucursal(Long id) {
-		return inventarioDao.findBySucursal(id);
+	public Inventario findByIdSucursal(Long id) {
+		return inventarioDao.findByIdSucursal(id);
 	}
 
 }

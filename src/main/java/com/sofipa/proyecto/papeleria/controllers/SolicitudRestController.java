@@ -37,7 +37,7 @@ public class SolicitudRestController {
 	@GetMapping("/solicitudes/sucursal/{id}")
 	public List <Solicitud> showSS(@PathVariable Long id)
 	{
-		return solicitudService.findBySucursal(id);
+		return solicitudService.findByIdSucursal(id);
 	}
 	
 	//Método que devuelve una solicitud mediante su identificador(id_solicitud)
@@ -78,7 +78,7 @@ public class SolicitudRestController {
 		Solicitud solicitudActual = solicitudService.findById(id);
 		//Se realizan los posibles cambios
 		solicitudActual.setUsuario_aprob(solicitud.getUsuario_aprob());
-		solicitudActual.setId_sucursal(solicitud.getId_sucursal());
+		solicitudActual.setIdSucursal(solicitud.getIdSucursal());
 		solicitudActual.setNombre_sucursal(solicitud.getNombre_sucursal());
 		solicitudActual.setNombre_usuario(solicitud.getNombre_usuario());
 		solicitudActual.setFecha_solicitud(solicitud.getFecha_solicitud());

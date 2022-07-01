@@ -20,7 +20,7 @@ public class Solicitud implements Serializable{
 	
 	@Column
 	private String usuario_aprob;
-	private Long id_sucursal;
+	private Long idSucursal;
 	private String nombre_usuario; 
 	private String nombre_sucursal;
 	@Column(name="fecha_solicitud")
@@ -63,12 +63,12 @@ public class Solicitud implements Serializable{
 		this.usuario_aprob = usuario_aprob;
 	}
 
-	public Long getId_sucursal() {
-		return id_sucursal;
+	public Long getIdSucursal() {
+		return idSucursal;
 	}
 
-	public void setId_sucursal(Long id_sucursal) {
-		this.id_sucursal = id_sucursal;
+	public void setIdSucursal(Long id_sucursal) {
+		this.idSucursal = id_sucursal;
 	}
 
 	public String getNombre_sucursal() {

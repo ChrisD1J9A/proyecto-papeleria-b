@@ -61,7 +61,7 @@ public class InventarioRestController {
 	@GetMapping("/inventario/Sucursal/{id}")
 	public Inventario showIS (@PathVariable Long id) 
 	{
-		return inventarioService.findBySucursal(id);
+		return inventarioService.findByIdSucursal(id);
 	}
 	
 	//Metodo para crear un nuevo Inventario
@@ -79,7 +79,7 @@ public class InventarioRestController {
 	{
 		Inventario inventarioActual = inventarioService.findById(id);
 		inventarioActual.setFecha_ultima_actualizacion(inventario.getFecha_ultima_actualizacion());
-		inventarioActual.setId_sucursal(inventario.getId_sucursal());
+		inventarioActual.setIdSucursal(inventario.getIdSucursal());
 		inventarioActual.setNombre_sucursal(inventario.getNombre_sucursal());
 		
 		return inventarioService.save(inventarioActual);

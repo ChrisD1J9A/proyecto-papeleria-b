@@ -15,5 +15,5 @@ public interface IInventarioService {
 	public Inventario findById(Long id);
 	
 	//Servicio para obtener un inventario perteneciente a una Sucursal en específico
-	public Inventario findBySucursal(Long id);
+	public Inventario findByIdSucursal(Long id);
 }

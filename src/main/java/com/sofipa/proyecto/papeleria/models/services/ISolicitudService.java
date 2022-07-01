@@ -16,6 +16,6 @@ public interface ISolicitudService {
 	public Solicitud findById(Long id);
 	
 	//Servicio para buscar las solicitudes de una sucursal
-	public List<Solicitud> findBySucursal(Long id);
+	public List<Solicitud> findByIdSucursal(Long id);
 
 }

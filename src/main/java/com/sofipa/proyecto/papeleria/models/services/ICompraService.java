@@ -14,7 +14,7 @@ public interface ICompraService {
 	public Compra findById(Long id);
 	
 	//Servicio para obtener las compras pertenecientes a una Sucursal en específico
-	public List <Compra> findBySucursal(Long id);
+	public List <Compra> findByIdSucursal(Long id);
 	
 	/*Servicio para obtener compras con mayores gastos en las sucursales y en un intervalo de tiempo
 	 * específico, por ejemplo los últimos 6 meses 
