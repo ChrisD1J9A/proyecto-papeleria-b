@@ -20,6 +20,7 @@ public class Solicitud implements Serializable{
 	
 	@Column
 	private String usuario_aprob;
+	@Column(name="idSucursal")
 	private Long idSucursal;
 	private String nombre_usuario; 
 	private String nombre_sucursal;

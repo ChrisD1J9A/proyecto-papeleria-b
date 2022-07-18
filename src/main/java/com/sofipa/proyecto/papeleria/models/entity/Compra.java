@@ -36,7 +36,7 @@ public class Compra implements Serializable{
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Proveedor proveedor;
 	
-	@Column(name="id_sucursal")
+	@Column(name="idSucursal")
 	private Long idSucursal;
 	
 	@Column(name="nombre_sucursal")
