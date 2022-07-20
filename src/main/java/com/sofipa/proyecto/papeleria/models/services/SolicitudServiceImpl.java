@@ -39,4 +39,14 @@ public class SolicitudServiceImpl implements ISolicitudService{
 		return solicitudDao.findByIdSucursal(id);
 	}
 
+	@Override
+	public List<Solicitud> findByIdSucursalAndEstatus(Long id, String estatus) {
+		return solicitudDao.findByIdSucursalAndEstatus(id, estatus);
+	}
+
+	@Override
+	public List<Solicitud> findByEstatus(String estatus) {
+		return solicitudDao.findByEstatus(estatus);
+	}
+
 }

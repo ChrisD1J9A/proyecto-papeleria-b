@@ -17,5 +17,11 @@ public interface ISolicitudService {
 	
 	//Servicio para buscar las solicitudes de una sucursal
 	public List<Solicitud> findByIdSucursal(Long id);
+	
+	//Servicio para buscar las solicitudes de una sucursal y con cierto estatus
+	public List<Solicitud> findByIdSucursalAndEstatus(Long id, String estatus);
+	
+	//Servicio para buscar las solicitudes de un determinado estatus
+	List <Solicitud> findByEstatus(String estatus);
 
 }

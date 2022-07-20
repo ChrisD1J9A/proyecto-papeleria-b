@@ -20,27 +20,39 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sofipa.proyecto.papeleria.models.entity.Solicitud;
 import com.sofipa.proyecto.papeleria.models.services.ISolicitudService;
 
-@CrossOrigin(origins= {"*"}, maxAge = 3600)
+@CrossOrigin(origins = { "*" }, maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class SolicitudRestController {
 	@Autowired
 	private ISolicitudService solicitudService;
-	
-	//Método que devuelve todos las solicitudes de la base de datos
+
+	// Método que devuelve todos las solicitudes de la base de datos
 	@GetMapping("/solicitudes")
 	public List<Solicitud> index() {
 		return solicitudService.findAll();
 	}
-	
-	//Método que devuelve todas las solicitudes de una determinada sucursal
+
+	// Método que devuelve todas las solicitudes de una determinada sucursal
 	@GetMapping("/solicitudes/sucursal/{id}")
-	public List <Solicitud> showSS(@PathVariable Long id)
-	{
+	public List<Solicitud> showSS(@PathVariable Long id) {
 		return solicitudService.findByIdSucursal(id);
 	}
-	
-	//Método que devuelve una solicitud mediante su identificador(id_solicitud)
+
+	// Método que devuelve todas las solicitudes de un determinado estatus
+	@GetMapping("/solicitudes/estatus/{estatus}")
+	public List<Solicitud> showSE(@PathVariable String estatus) {
+		return solicitudService.findByEstatus(estatus);
+	}
+
+	// Método que devuelve todas las solicitudes de una determinada sucursal y de
+	// cierto estatus
+	@GetMapping("/solicitudes/sucursal/{id}/{estatus}")
+	public List<Solicitud> showSSE(@PathVariable Long id, @PathVariable String estatus) {
+		return solicitudService.findByIdSucursalAndEstatus(id, estatus);
+	}
+
+	// Método que devuelve una solicitud mediante su identificador(id_solicitud)
 	@GetMapping("/solicitudes/{id}")
 	public ResponseEntity<?> show(@PathVariable Long id) {
 		Solicitud solicitud = null;
@@ -62,21 +74,21 @@ public class SolicitudRestController {
 			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 		}
 	}
-	
-	//Método para crear una nueva Solicitud
+
+	// Método para crear una nueva Solicitud
 	@PostMapping("/solicitudes")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Solicitud create(@RequestBody Solicitud solicitud) {
 		return solicitudService.save(solicitud);
 	}
-	
-	//Método para actualizar una nueva solicitud
+
+	// Método para actualizar una nueva solicitud
 	@PutMapping("/solicitudes/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Solicitud update(@RequestBody Solicitud solicitud, @PathVariable Long id) {
-		//Se busca la solicitud a actualizar en la base de datos
+		// Se busca la solicitud a actualizar en la base de datos
 		Solicitud solicitudActual = solicitudService.findById(id);
-		//Se realizan los posibles cambios
+		// Se realizan los posibles cambios
 		solicitudActual.setUsuario_aprob(solicitud.getUsuario_aprob());
 		solicitudActual.setIdSucursal(solicitud.getIdSucursal());
 		solicitudActual.setNombre_sucursal(solicitud.getNombre_sucursal());
@@ -90,7 +102,7 @@ public class SolicitudRestController {
 		solicitudActual.setObservacion_aprobacion_rechazo(solicitud.getObservacion_aprobacion_rechazo());
 		solicitudActual.setPfdc(solicitud.isPfdc());
 		solicitudActual.setEstatus(solicitud.getEstatus());
-		//Y se actualiza la solicitud
+		// Y se actualiza la solicitud
 		return solicitudService.save(solicitudActual);
 	}
 }
