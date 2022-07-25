@@ -15,6 +15,11 @@ import javax.persistence.TemporalType;
 @Table(name = "max_min_de_stock")
 public class MaxMinDeStock implements Serializable
 {
+	/*
+	 *Se presenta la entidad MaxMinDeStock la cual es la configuración de máximos y mínimos de Stock de inventario, 
+	 *se muestran sus atributos, métodos get y set.
+	 */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_maxMinDeStock;

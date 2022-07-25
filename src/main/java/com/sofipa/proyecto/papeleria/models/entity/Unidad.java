@@ -12,7 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "unidad")
 public class Unidad implements Serializable {
-
+	/*
+	 * La entidad unidad es la representación de información que se necesita, 
+	 * se asocia a la tabla de la base de datos con el mismo nombre. Así como se detallan su atributos y métodos
+	 * */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_unidad;

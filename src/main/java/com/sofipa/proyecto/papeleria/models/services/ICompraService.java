@@ -47,4 +47,7 @@ public interface ICompraService {
 	
 	//Servicio para obtener todas las compras realizadas en un rango de fechas 
 	public List <Compra> comprasPorRangoFechas(String fecha1, String fecha2); 
+	
+	//Servicio para obtener de la base de datos las compras de acuerdo a cierto estatus
+	public List <Compra> findByEstatus(String estatus);
 }

@@ -6,6 +6,10 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class InventarioDetallePK implements Serializable{
+	/*
+	 *Auxiliar en el mapeo de Detalle_inventario, Inventario y Producto
+	 * */
+	
 	@Column(name = "id_inventario", nullable = false)
 	private long idInventario;
 

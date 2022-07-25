@@ -91,4 +91,8 @@ public interface ICompraDao extends CrudRepository<Compra, Long>{
 			   + "FROM compras c\r\n"
 			   + "WHERE c.fecha_creacion BETWEEN :fecha1 AND :fecha2", nativeQuery = true)
 	List <Compra> comprasPorRangoFechas(@Param("fecha1") String fecha1, @Param("fecha2") String fecha2);
+	
+	/*Se obtiene de la base de datos las compras de acuerdo a cierto estatus
+	 * */
+	List <Compra> findByEstatus(String estatus);
 }

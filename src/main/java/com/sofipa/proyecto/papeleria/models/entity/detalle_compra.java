@@ -15,6 +15,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "detalle_compra")
 public class detalle_compra implements Serializable {
+	/*
+	 *Se muestran sus atributos, sus métodos get y set de la actual entidad
+	 *La entidad detalle_compra tiene la clave primaria compuesta por dos campos: id_compra e id_prodcuto. 
+	 *En java, toda la clave primara es un objeto con el mismo nombre de la clase primaria más el sufijo "PK" 
+	 *(En este caso compraDetallePK). 
+	 * */
+	
 	@EmbeddedId
 	private CompraDetallePK compraDetallePK;
 

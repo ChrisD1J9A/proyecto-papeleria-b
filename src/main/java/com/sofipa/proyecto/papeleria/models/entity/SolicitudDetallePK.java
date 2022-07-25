@@ -7,6 +7,9 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class SolicitudDetallePK implements Serializable {
+	/*
+	 *La clase SolicitudDetallePK (Auxiliar en el mapeo de Detalle_solicitud, Solicitud y Producto)
+	 * */
 
 	@Column(name = "id_solicitud", nullable = false)
 	private long idSolicitud;

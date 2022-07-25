@@ -17,6 +17,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "productos")
 public class Producto implements Serializable {
+	/*
+	 * La entidad producto es la representación de información que se necesita, 
+	 * se asocia a la tabla de la base de datos el nombre productos y mantiene una relación ManyToOne 
+	 * con la tabla unidad, dicha relación se detalla mas adelante así como los demás atributos y métodos
+	 * */
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

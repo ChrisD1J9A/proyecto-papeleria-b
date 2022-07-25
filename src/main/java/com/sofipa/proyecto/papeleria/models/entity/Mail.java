@@ -1,5 +1,7 @@
 package com.sofipa.proyecto.papeleria.models.entity;
 
+/*La clase mail es usada para tener un formato al momento de enviar un correo electrónico 
+ * y no es una entidad para usarse como modelo en la base de datos, en otras palabras, no es una tabla.*/
 public class Mail {
 	private String para;
 	private String mensaje;

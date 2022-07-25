@@ -14,6 +14,10 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "max_min_de_existencia")
 public class MaxMinDeExistencia implements Serializable {
+	/*
+	 *Se presenta la entidad MaxMinDeExistencia la cual es la configuración de máximos y mínimos de existencia, 
+	 *se muestran sus atributos, métodos get y set.*/
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_maxMinDeExistencia;

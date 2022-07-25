@@ -15,6 +15,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="detalle_compra_pfdc")
 public class detalle_compra_pfdc implements Serializable {
+	/*
+	 * Tabla exclusiva para almacenar los productos fuera del catálogo que el usuario ingresó cuando realizó una solicitud.
+	 * Se hace referencia únicamente a la entidad Compra. El resto de atributos son id_detalle_compra_pfdc, nombreProducto, 
+	 * cant_existente, cant_solicitada, cant_autorizada y cant_comprada.
+	 * */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_detalle_compra_pfdc;

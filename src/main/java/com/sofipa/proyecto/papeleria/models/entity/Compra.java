@@ -22,6 +22,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "compras")
 public class Compra implements Serializable{
+	/*
+	 * La entidad compra es la representación de información que se necesita, 
+	 * se asocia a la tabla de la base de datos el nombre compras, 
+	 * mantiene una relación OneToOne con la tabla solicitudes y otra relación ManyToOne con la tabla proveedores.
+	 * */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_compra; 

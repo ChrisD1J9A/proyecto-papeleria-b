@@ -220,4 +220,10 @@ public class CompraRestController {
 	public List<Compra> comprasPorRangoFechas(@PathVariable String fecha1, @PathVariable String fecha2) {
 		return compraService.comprasPorRangoFechas(fecha1, fecha2);
 	}
+	
+	// Metodo para obtener las compras en un rango de fechas
+	@GetMapping("/compras/estatus/{estatus}")
+	public List<Compra> comprasByEstatus(@PathVariable String estatus) {
+		return compraService.findByEstatus(estatus);
+	}
 }

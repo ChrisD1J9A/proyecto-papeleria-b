@@ -17,6 +17,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "detalle_inventario")
 public class detalle_inventario implements Serializable {
+	/*
+	 *Se muestra el mapeo de la entidad débil detalle_inventario, sus atributos, 
+	 *sus métodos get y set, así como las referencias hacia las tablas Inventario y Producto. 
+	 *La entidad Detalle_inventario tiene la clave primaria compuesta por dos campos: 
+	 *id_inventario e id_prodcuto. Entonces, se crea la entidad primaria: InventarioDetallePK 
+	 * */
+	
 	@EmbeddedId
 	private InventarioDetallePK inventarioDetallePK;
 

@@ -14,6 +14,14 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "solicitudes")
 public class Solicitud implements Serializable{
+	/**
+	 * La entidad solicitud es la representación de información que se necesita, 
+	 * se asocia a la tabla de la base de datos el nombre solicitudes.
+	 * Se muestra la entidad Solicitud, así como sus respectivos atributos 
+	 * mismos que son las columnas de la tabla que representa en la base de datos, 
+	 * los correspondientes métodos get y set. 
+	 */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_solicitud;

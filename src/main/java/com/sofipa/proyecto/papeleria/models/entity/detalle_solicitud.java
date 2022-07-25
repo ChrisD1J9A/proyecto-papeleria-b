@@ -14,6 +14,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="detalle_solicitud")
 public class detalle_solicitud implements Serializable {
+	/*
+	 * Se muestra a continuación la entidad débil detalle_solicitud, 
+	 * se muestran sus atributos, sus métodos get y set además de cómo se maneja 
+	 * una entidad débil con respecto a sus llaves primarias.
+	 * La entidad Detalle_solicitud tiene la clave primaria compuesta por dos campos: id_solicitud e id_prodcuto. 
+	 * En java, toda la clave primara es un objeto con el mismo nombre de la clase primaria más el sufijo "PK". 
+	 * Pero, además, esta clave primaria debe tener una referencia a la misma detalle_solicitud de quien pertenece. 
+	 * Entonces, se crea la entidad primaria: SolicitudDetallePK
+	 * */
+	
 	@EmbeddedId
 	private SolicitudDetallePK solicitudDetallePK;
 

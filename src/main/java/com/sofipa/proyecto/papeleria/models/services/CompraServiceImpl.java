@@ -93,4 +93,9 @@ public class CompraServiceImpl implements ICompraService{
 	public List<Compra> comprasPorRangoFechas(String fecha1, String fecha2) {
 		return compraDao.comprasPorRangoFechas(fecha1, fecha2);
 	}
+
+	@Override
+	public List<Compra> findByEstatus(String estatus) {
+		return compraDao.findByEstatus(estatus);
+	}
 }

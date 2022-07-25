@@ -12,7 +12,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "proveedores")
 public class Proveedor implements Serializable{
-	
+	/*
+	 * La entidad proveedor es la representación de información que se necesita, 
+	 * se asocia a la tabla de la base de datos con el nombre proveedores. 
+	 * Se detallan sus atributos, sus respectivos métodos set y get así como se define 
+	 * las columnas de la tabla que representa la entidad para la base de datos
+	 * */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_proveedor;

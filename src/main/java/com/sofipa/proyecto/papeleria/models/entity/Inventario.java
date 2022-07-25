@@ -15,6 +15,12 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "inventario")
 public class Inventario implements Serializable {
+	/*
+	 *la entidad Inventario donde se detallan sus atributos, sus respectivos métodos set y get 
+	 *así como se define las columnas de la tabla que representa la entidad para la base de datos, 
+	 *para el caso de Inventario sus atributos son: id_inventario, id_sucursal, nombre_sucursal y fecha_ultima_actualizacion. 
+	 * */
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_inventario;

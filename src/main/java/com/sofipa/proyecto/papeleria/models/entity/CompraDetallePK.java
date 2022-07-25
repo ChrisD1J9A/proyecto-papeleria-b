@@ -7,6 +7,9 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class CompraDetallePK implements Serializable {
+	/*
+	 * Auxiliar en el mapeo de Detalle_compra, Compra y Producto. 
+	 * */
 	@Column(name = "id_compra", nullable = false)
 	private long idCompra;
 
