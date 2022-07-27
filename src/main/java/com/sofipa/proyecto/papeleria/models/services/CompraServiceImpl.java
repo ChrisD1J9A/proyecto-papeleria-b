@@ -42,12 +42,14 @@ public class CompraServiceImpl implements ICompraService{
 	 * específico, por ejemplo los últimos 6 meses 
 	 * */
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> maximoGastoDeComprasPorSucursal(int meses) {
 		return compraDao.maximoGastoDeComprasPorSucursal(meses);
 	}
 	
 	//Servicio para obtener las compras con mayores gastos en las sucursales sin intervalos de tiempo(Histórico)
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> maximoGastoDeComprasPorSucursalHistorico() {
 		return  compraDao.maximoGastoDeComprasPorSucursalHistorico();
 	}
@@ -56,6 +58,7 @@ public class CompraServiceImpl implements ICompraService{
 	 * de acuerdo a un rango de fechas especificados
 	 * */
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> maximoGastoDeComprasPorSucursalRangoFechas(String fecha1, String fecha2) {
 		return compraDao.maximoGastoDeComprasPorSucursalRangoFechas(fecha1, fecha2);
 	}
@@ -64,12 +67,14 @@ public class CompraServiceImpl implements ICompraService{
 	 * por ejemplo en los últimos 6 meses
 	 * */
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> gastoTotalDeComprasPorSucursal(int meses) {
 		return  compraDao.gastoTotalDeComprasPorSucursal(meses);
 	}
 	
 	//Servicio para obtener el gasto total efectuado en las compras de cada sucursal desde siempre (Histórico)
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> gastoTotalDeComprasPorSucursalHistorico() {
 		return  compraDao.gastoTotalDeComprasPorSucursalHistorico();
 	}
@@ -77,6 +82,7 @@ public class CompraServiceImpl implements ICompraService{
 	/*Servicio para obtener el gasto total efectuado en las compras de cada sucursal en un rango de fechas 
 	 * en específico*/
 	@Override
+	@Transactional(readOnly = true)
 	public List<Object> gastoTotalDeComprasPorSucursalRangoFechas(String fecha1, String fecha2) {
 		return  compraDao.gastoTotalDeComprasPorSucursalRangoFechas(fecha1, fecha2);
 	}
