@@ -31,6 +31,7 @@ public class Solicitud implements Serializable{
 	@Column(name="idSucursal")
 	private Long idSucursal;
 	private String nombre_usuario; 
+	private String correo_solicitante;
 	private String nombre_sucursal;
 	@Column(name="fecha_solicitud")
 	@Temporal(TemporalType.DATE) 
@@ -98,6 +99,14 @@ public class Solicitud implements Serializable{
 
 	public void setNombre_usuario(String nombre_usuario) {
 		this.nombre_usuario = nombre_usuario;
+	}
+
+	public String getCorreo_solicitante() {
+		return correo_solicitante;
+	}
+
+	public void setCorreo_solicitante(String correo_solicitante) {
+		this.correo_solicitante = correo_solicitante;
 	}
 
 	public Date getFecha_solicitud() {
@@ -171,14 +180,6 @@ public class Solicitud implements Serializable{
 	public void setEstatus(String estatus) {
 		this.estatus = estatus;
 	}
-	
-	/**@OneToMany(cascade = CascadeType.ALL, mappedBy = "solicitudes")
-	private Collection<detalle_solicitud> solicitudDetalleCollection = new ArrayList<detalle_solicitud>();
-	
-	public void agregarDetalle(detalle_solicitud det, Producto producto) {
-	      this.solicitudDetalleCollection.add(det);
-	      det.setSolicitudDetallePK(new SolicitudDetallePK(this.id_solicitud, producto.getId_producto()));
-	 }**/
 
 	private static final long serialVersionUID = 1L;
 	

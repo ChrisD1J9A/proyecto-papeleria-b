@@ -93,6 +93,7 @@ public class SolicitudRestController {
 		solicitudActual.setIdSucursal(solicitud.getIdSucursal());
 		solicitudActual.setNombre_sucursal(solicitud.getNombre_sucursal());
 		solicitudActual.setNombre_usuario(solicitud.getNombre_usuario());
+		solicitudActual.setCorreo_solicitante(solicitud.getCorreo_solicitante());
 		solicitudActual.setFecha_solicitud(solicitud.getFecha_solicitud());
 		solicitudActual.setFecha_rechazo(solicitud.getFecha_rechazo());
 		solicitudActual.setFecha_aprobacion(solicitud.getFecha_aprobacon());

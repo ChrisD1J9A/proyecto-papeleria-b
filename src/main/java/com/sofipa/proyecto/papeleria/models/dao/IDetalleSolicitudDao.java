@@ -9,7 +9,7 @@ import java.util.List;
 public interface IDetalleSolicitudDao extends CrudRepository<detalle_solicitud, Long>{
 	
 	/*
-	 * Consulta en la base de datos la cual busca todos los detalles de solicitud de acuerdo al id_solicitud,
+	 * Consulta en la base de datos todos los detalles de solicitud de acuerdo al id_solicitud,
 	 * En otras palabras se consultan los detalles de solicitud que pertenecen a una determinada solicitud. 
 	 * */
 	@Query(value= "SELECT * \r\n"
