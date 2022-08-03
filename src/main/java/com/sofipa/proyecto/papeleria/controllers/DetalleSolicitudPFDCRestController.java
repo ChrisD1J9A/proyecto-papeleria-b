@@ -30,7 +30,7 @@ public class DetalleSolicitudPFDCRestController {
 		return detalleSolicitudService.save(ds);
 	}
 	
-	//Método para crear, almacenar un detalle de solicitud con productos fuera del catalogo 
+	//Método para actualizar un grupo de detalles de solicitud con productos fuera del catalogo 
 	@PutMapping("/detalle_solicitud_pfdc/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public List<detalle_solicitud_pfdc> update(@RequestBody detalle_solicitud_pfdc [] detalles_f, @PathVariable Long id)
@@ -45,7 +45,7 @@ public class DetalleSolicitudPFDCRestController {
 		return detalleSolicitudService.detalles_de_solicitud_pfdc(id);//Se devuelven los detalles actualizados
 	}	
 	
-	//Método para obtener todos los detalles de solicitud con productos fuera del catalogo mediante el id_compra
+	//Método para obtener todos los detalles de solicitud con productos fuera del catalogo mediante el id_solicitud
 	@GetMapping("/detalle_solicitud_pfdc/{id}")
 	public List<detalle_solicitud_pfdc> detalles_de_sol(@PathVariable Long id)
 	{
