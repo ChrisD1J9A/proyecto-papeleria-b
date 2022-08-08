@@ -28,8 +28,9 @@ public class DetalleSolicitudRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_solicitud create (@RequestBody detalle_solicitud ds)
 	{
-		//Para una entidad cuya Primary key se compone de dos 
+		//Para la entidad detalle_solicitud su Primary key se compone de dos 
 		//id_solicitud e id_producto, se asigna al objeto mediante el SolicitudDetallePK para definirse
+		//como clave primaria
 		SolicitudDetallePK solicitudDetallePK = new SolicitudDetallePK();
 		solicitudDetallePK.setIdSolicitud(ds.getSolicitud().getId_solicitud());
 		solicitudDetallePK.setIdProducto(ds.getProducto().getId_producto());

@@ -29,7 +29,8 @@ public class DetalleCompraRestController {
 	public detalle_compra create (@RequestBody detalle_compra dc)
 	{
 		//Para una entidad cuya Primary key se compone de dos 
-		//Id_compra e Id_producto, se asigna al objeto mediante el compraDetallePK para definirse
+		//Id_compra e Id_producto, se asigna mediante la clase compraDetallePK para definirse 
+		//como clave primaria de detalle_compra que se esta pasando como parametro en este metodo
 		CompraDetallePK compraDetallePk = new CompraDetallePK();
 		compraDetallePk.setIdCompra(dc.getCompra().getId_compra());
 		compraDetallePk.setIdProducto(dc.getProducto().getId_producto());

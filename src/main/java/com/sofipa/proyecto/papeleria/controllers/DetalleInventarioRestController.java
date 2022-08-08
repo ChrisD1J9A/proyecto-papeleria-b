@@ -28,12 +28,13 @@ public class DetalleInventarioRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public detalle_inventario create (@RequestBody detalle_inventario di)
 	{
-		//Para una entidad cuya Primary key se compone de dos 
+		//Para la entidad detalle_inventario su Primary key se compone de dos:
 		//id_inventario e id_producto, se asigna al objeto mediante el InventarioDetallePK para definirse
+		//como clave primaria 
 		InventarioDetallePK inventarioDetpk = new InventarioDetallePK();
 		inventarioDetpk.setIdProducto(di.getProducto().getId_producto());
 		inventarioDetpk.setIdInventario(di.getInventario().getId_inventario());
-		di.setInventarioDetallePK(inventarioDetpk);//Se asigna al detalle compra su PK antes de guardar
+		di.setInventarioDetallePK(inventarioDetpk);//Se asigna al detalle inventario su PK antes de guardar
 		return detalleInventarioService.save(di);//Se guarda y devuelve el objeto creado
 	}
 	
